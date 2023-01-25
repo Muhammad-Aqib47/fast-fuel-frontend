@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');  
+body {  
+    font-family: 'Roboto Condensed', sans-serif;  
+    color: #262626;  
+    
+  }  
+  .container {  
+    width: 100%;    
+    margin-right: auto;  
+    margin-left: auto;  
+    position:absolute;
+
+  }  
+  @media (min-width: 1200px)  
+  {  
+    .container {  
+      max-width: 1140px;  
+    }  
+  }  
+  .d-flex {  
+    display: flex;  
+    flex-direction: row;  
+    background: #f6f6f6;  
+    border-radius: 0 0 5px 5px;  
+    padding: 15px;  
+  }  
+  form {  
+    flex: 4;  
+  }  
+ 
+  .title {    
+    background: linear-gradient(to bottom right, #5195A8 0%, #70EAFF 100%);  
+    padding: 20px;  
+    color: #f6f6f6;
+    
+    
+  }  
+  h2 {  
+    margin: 0;  
+    padding-left: 15px;  
+    text-align: center; 
+  }  
+  .required {  
+    color: red;  
+  }  
+  label {  
+    display: block;  
+    margin: 15px;  
+  }  
+ 
+  label>span {  
+    float: left;  
+    width: 25%;  
+    margin-top: 12px;  
+    padding-right: 10px;  
+  }  
+  input[type="email"]  
+  {  
+    width: 70%;  
+    height: 30px;  
+    padding: 5px 10px;  
+    margin-bottom: 10px;  
+    border: 1px solid #dadada;  
+    color: #888;  
+  }  
+  select  
+  {  
+    width: 70%;  
+    height: 30px;  
+    padding: 5px 10px;  
+    margin-bottom: 10px;  
+    border: 1px solid #dadada;  
+    color: #888;  
+  }  
+  input[type="text"] {  
+    width: 70%;  
+    height: 30px;  
+    padding: 5px 10px;  
+    margin-bottom: 10px;  
+    border: 1px solid #dadada;  
+    color: #888;  
+  }  
+  input[type="number"] {  
+    width: 70%;  
+    height: 30px;  
+    padding: 5px 10px;  
+    margin-bottom: 10px;  
+    border: 1px solid #dadada;  
+    color: #888;  
+  }  
+  input[type="tel"]   
+  {  
+    width: 70%;  
+    height: 30px;  
+    padding: 5px 10px;  
+    margin-bottom: 10px;  
+    border: 1px solid #dadada;  
+    color: #888;  
+  }  
+  select {  
+    
+    height: 45px;  
+    padding: 5px 10px;  
+    margin-bottom: 10px;  
+  }   
+
+ 
+  button {  
+    width: 20%;  
+    margin-top: 10px;  
+    margin-left: 50%;
+    padding: 10px;  
+    border: none;  
+    border-radius: 30px;  
+    background: #52ad9c;  
+    color: #fff;  
+    font-size: 15px;  
+    font-weight: bold;  
+    
+    
+  }  
+  button:hover {  
+    cursor: pointer;  
+    background: #428a7d;  
+  }  
+
+

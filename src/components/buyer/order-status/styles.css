@@ -1,0 +1,27 @@
+
+
+.table_div {
+    margin-left: 20px;
+    margin-top: 170px;
+}
+
+.table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+.table thead th {
+    background-color: #4b4276;
+    border: solid 2px #7265b4;
+    color: white;
+    padding: 10px;
+    text-align: left;
+
+}
+.table tbody td {
+    border: solid 2px #63b9b9;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
