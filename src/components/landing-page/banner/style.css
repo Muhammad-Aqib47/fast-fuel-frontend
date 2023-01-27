@@ -1,0 +1,19 @@
+h1{
+    font-family: Georgia, serif;
+    font-size: 60px;
+    color: white;
+  }
+  .banner img {
+    width: 100%;
+    height: 700px;
+    /* opacity: 0.80; */
+  }
+  .banner-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;  
+  }
+  
+  
