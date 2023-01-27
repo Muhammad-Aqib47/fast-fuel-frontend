@@ -2,8 +2,30 @@ import SideBar from "../sidebar";
 import '../sidebar/style.css'
 import '../form/styles.css'
 import './styles.css'
+import { useEffect, useState } from "react";
+
 
 function OrderStatus() {
+    const [ordersData, setOrdersData] = useState([])
+
+
+
+    const getOrdersData = async () => {
+        try {
+            const response = await fetch('http://localhost:3001/api/orders/getBuyerOrderStatus')
+            const data = await response.json()
+            setOrdersData(data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    useEffect(() => {
+        getOrdersData()
+    }, [])
+
+
     return (
         <div className="wrapper">
             <SideBar />
@@ -14,7 +36,7 @@ function OrderStatus() {
                     </div>
 
                     <div className="table_div">
-                        <table class="table">
+                        <table className="table">
                             <thead>
                                 <tr>
                                     <th>Order_id</th>
@@ -30,21 +52,26 @@ function OrderStatus() {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>01</td>
-                                    <td>M.Aqib</td>
-                                    <td>Lahore</td>
-                                    <td>DHA PHASE 8</td>
-                                    <td>Petrol</td>
-                                    <td>230</td>
-                                    <td>5</td>
-                                    <td>DHA phase ex Park View str.33</td>
-                                    <td>03123456789</td>
-                                    <td>Cash On Delivery</td>
-                                
-                                  
-                                </tr>
-                               
+                                {ordersData.map((order, index) => {
+                                    console.log(order)
+
+                                    return <tr>
+                                        {/* <td>{Math.floor(Math.random() * 90000) + 10000}</td> */}
+                                        <td>{order.order_id}</td>
+                                        <td>{order.b_name}</td>
+                                        <td>{order.city}</td>
+                                        <td>{order.fuel_station}</td>
+                                        <td>{order.fuel_type}</td>
+                                        <td>{order.fuel_price}</td>
+                                        <td>{order.fuel_quantity}</td>
+                                        <td>{order.fuel_delivery_address}</td>
+                                        <td>{order.b_phone_number}</td>
+                                        <td>{order.payment_mode}</td>
+                                    </tr>
+
+
+                                })}
+
                             </tbody>
                         </table>
                     </div>
