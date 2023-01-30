@@ -49,6 +49,7 @@ function OrderStatus() {
                                     <th>Delivery address</th>
                                     <th>Phone Number</th>
                                     <th>Payment Mode</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,11 +68,9 @@ function OrderStatus() {
                                         <td>{order.fuel_delivery_address}</td>
                                         <td>{order.b_phone_number}</td>
                                         <td>{order.payment_mode}</td>
+                                        <tr><td><button className="delete-row">delete</button></td></tr>
                                     </tr>
-
-
                                 })}
-
                             </tbody>
                         </table>
                     </div>

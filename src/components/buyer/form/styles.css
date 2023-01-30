@@ -33,7 +33,7 @@ form {
 }
 
 .title {
-  background: linear-gradient(to bottom right, #5195A8 0%, #70EAFF 100%);
+  background: linear-gradient(to bottom right, #4b4276 0%, #70EAFF 100%);
   padding: 20px;
   color: #f6f6f6;
 
@@ -115,7 +115,7 @@ select {
 }
 
 
-button {
+.place-order {
   width: 20%;
   margin-top: 10px;
   margin-left: 50%;
@@ -130,7 +130,7 @@ button {
 
 }
 
-button:hover {
+.place-order:hover {
   cursor: pointer;
   background: #428a7d;
 }
@@ -140,4 +140,24 @@ button:hover {
   color: #2642bd;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
+}
+
+.swal2-confirm {
+  margin: 10px;
+  padding-right: 62px;
+  padding-left: 40px;
+  border-radius: 30px;
+  width: 20%;
+  border: none;
+  background: #52ad9c;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+
+.swal2-confirm:hover {
+  cursor: pointer;
+  background: #428a7d;
 }
