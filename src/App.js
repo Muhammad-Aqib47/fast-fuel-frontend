@@ -6,7 +6,7 @@ import ServicesCard from './components/landing-page/services-card';
 import ServeAreas from './components/landing-page/where we serve';
 import Footer from './components/landing-page/footer';
 import Faqs from './components/landing-page/faqs';
-import { Route, Routes } from 'react-router-dom';
+
 
 
 function App() {

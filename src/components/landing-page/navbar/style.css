@@ -1,56 +1,81 @@
 nav {
-    display: flex;
-    height: 50px;
-    align-items: center;
-    background-color: black;
-    color: #fff;
-    position: fixed;
-    width: 100%;
-  }
-  
-  .left {
-    flex: 1;
-  }
-  
-  .middle {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-  }
-  
-  nav a:hover {
-    background-color: #444;
-  }
-  
-  nav button {
-    border-radius: 2px;
-    background-color: white;
-    color: #333;
-    border: none;
-    width: 80px;
-    height: 30px;
-    margin-left: 10px;
-    cursor: pointer;
-    border: 2px solid #333;
-  }
-  nav button:hover {
-    background-color: #f5f5f5; 
-  }
-  
-  .logo{
-     width:86px;
-     height:auto;
-  }
-  
+  display: flex;
+  height: 50px;
+  align-items: center;
+  background-color: black;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+}
+
+.left {
+  flex: 1;
+}
+
+.middle {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+nav a:hover {
+  background-color: #444;
+}
+
+nav button {
+  border-radius: 2px;
+  border: none;
+  width: 80px;
+  height: 30px;
+  margin: 0px 5px 0px 5px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background-color: red;
+  color: white;
+  font-size: 15px;
+
+}
+
+nav button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+nav button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+nav button:hover span {
+  padding-right: 25px;
+}
+
+nav button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}

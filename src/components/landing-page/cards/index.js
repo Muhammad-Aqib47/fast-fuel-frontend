@@ -4,7 +4,6 @@ function Cards(props) {
     const { title, desc, img } = props;
     console.log(props)
     return (
-        <>
         <div className="center" id='section-3'>
             <div className="card">
                 <h2>{title}</h2>
@@ -12,7 +11,6 @@ function Cards(props) {
                 <p className="title">{desc}</p>
             </div>
         </div>
-        </>
     )
 }
 export default Cards;

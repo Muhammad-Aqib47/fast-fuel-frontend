@@ -11,7 +11,7 @@
     font-family: "Lucida Console", "Courier New", monospace;
     width: 70%;
     height: 100vh;
-    background-color: #000000;
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,7 +67,6 @@
     overflow: hidden;
     position: relative;
     background-color: #000;
-    transition: max-height 650ms;
   }
   .answer p{
     font-size: larger;
@@ -86,3 +85,5 @@
   .accordion-item:target .accordion-link .ion-md-arrow-down{
     display: block;
   }
+
+
