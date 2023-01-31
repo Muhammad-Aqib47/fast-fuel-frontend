@@ -1,0 +1,89 @@
+.main {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-size: cover;
+  background-position: center;
+}
+.form-container {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px red;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  margin: 0px 45px;
+}
+.title-text {
+  text-align: center;
+  color:#00B0FF;
+  
+  
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-image {
+  width: 130px;
+}
+
+.input-fields {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  background: #f8f9fa;
+
+}
+.input-fields-lable {
+  font-size: 12px;
+  color: gray;
+  font-weight: bold;
+  margin-bottom: 2px;
+  /* margin-top: 3px; */
+}
+.submit-buton{
+  height: 38px;
+  padding: 10px;
+  border: none;
+  background-color:#00B0FF;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 12px;
+
+}
+.submit-buton:hover{
+  background-color:#ff9d00;
+}
+.error-meessage{
+   font-size: 12px;
+    color: red;
+}
+.text-before-link{
+  text-align: center;
+  margin-bottom: 24px;
+  color: gray;
+}
+.link-to-redirect {
+  color: #00b0ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.link-to-redirect:hover {
+  color: #ff9d00;
+}
