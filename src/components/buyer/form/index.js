@@ -27,19 +27,37 @@ function Form() {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
 
+
     }
 
     const createOrder = async (event) => {
         event.preventDefault();
+
+        //---------------sweet alert------------------------------------//
         Swal.fire({
-            title: 'Thank You!',
-            text: 'You order has been successfully done.',
-            icon: 'success',
+            title: 'Are you sure?',
+            text: "That is you data is correct!",
+            icon: 'info',
             buttonsStyling: false,
-            confirmButtonText: 'OK'
-        }).then(() => {
-            window.location.reload();
-        });
+            showCancelButton: true,
+            cancelButtonText: 'No',
+            confirmButtonText: 'Yes',
+            allowOutsideClick: false,
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Thank You!',
+                    text: 'You order has been successfully done.',
+                    icon: 'success',
+                    buttonsStyling: false,
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    window.location.reload();
+                });
+            }
+        })
+        //---------------------<><><><><><>><>----------------------------//
 
         const allInputValues = {
             name: formData.name,
@@ -102,7 +120,7 @@ function Form() {
                 console.log(error)
             }
         }
-        getSellersData();
+        getSellersData()
         //---------------------------------------<><><><><><>----------------------------//
 
 
@@ -188,7 +206,7 @@ function Form() {
                                     <option value="select"></option>
                                     {fuelPrice.map((price) => <option>{price.fuel_price}</option>)}
 
-                                    {/* <input type="text" onChange={inputHandler} id='fuelPrice' value={formData.fuelPrice} name="fuelPrice" readOnly /> */}
+
                                 </select>
                             </label>
                             <label>

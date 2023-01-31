@@ -144,10 +144,9 @@ select {
 
 .swal2-confirm {
   margin: 10px;
-  padding-right: 62px;
-  padding-left: 40px;
+  padding-right: 32px;
+  padding-left: 33px;
   border-radius: 30px;
-  width: 20%;
   border: none;
   background: #52ad9c;
   color: #fff;
@@ -160,4 +159,26 @@ select {
 .swal2-confirm:hover {
   cursor: pointer;
   background: #428a7d;
+}
+
+.swal2-cancel {
+  margin: 10px;
+  padding-right: 32px;
+  padding-left: 33px;
+  border-radius: 30px;
+  border: none;
+  background: rgb(66, 66, 248);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+
+.swal2-cancel:hover {
+  cursor: pointer;
+  background: white;
+  color: white;
+  background: rgb(98, 98, 223);
+
 }

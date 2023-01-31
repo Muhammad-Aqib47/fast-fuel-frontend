@@ -8,10 +8,11 @@ function SideBar() {
 
         <div className="wrapper">
             <div className="sidebar">
-                <h2>Fast Fuel</h2>
+                <h2 style={{ marginRight: '18px' }}>Fast Fuel</h2>
 
                 <div>
                     <img src="./img_avatar.png" alt='' style={{ width: "150px", borderRadius: "50%", marginLeft: "20px" }} />
+                    <h3 style={{ textAlign: 'center', color: 'white', marginTop: '20px', marginRight: '18px' }}>Muhammad Aqib</h3>
                     {/* <input type="file" accept="image/*" /> */}
                 </div>
 

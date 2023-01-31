@@ -3,13 +3,15 @@ import '../sidebar/style.css'
 import '../form/styles.css'
 import './styles.css'
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+
 
 
 function OrderStatus() {
     const [ordersData, setOrdersData] = useState([])
 
 
-
+    // get order status from orders
     const getOrdersData = async () => {
         try {
             const response = await fetch('http://localhost:3001/api/orders/getBuyerOrderStatus')
@@ -21,12 +23,53 @@ function OrderStatus() {
     }
 
 
+
     useEffect(() => {
         getOrdersData()
     }, [])
 
 
+    //delete row from orders table where id == id
+    const cancelOrder = async (id) => {
+        try {
+            const response = await fetch(`http://localhost:3001/api/orders/${id}`, {
+                method: 'DELETE'
+            });
+            const data = await response.json()
+            console.log("data deleted", data)
+
+        } catch (error) {
+            console.log(error)
+        }
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "To cancel your order !",
+            type: 'warning',
+            buttonsStyling: false,
+            showCancelButton: true,
+            cancelButtonText: 'No',
+            confirmButtonText: 'Yes',
+            allowOutsideClick: false,
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Order Cancel',
+                    text: 'You order has been Cancel!.',
+                    icon: 'success',
+                    buttonsStyling: false,
+                    confirmButtonText: 'OK'
+                })
+                    .then(() => {
+                        window.location.reload();
+                    });
+            }
+        })
+    }
+
     return (
+
         <div className="wrapper">
             <SideBar />
             <div className="main_content">
@@ -37,7 +80,7 @@ function OrderStatus() {
 
                     <div className="table_div">
                         <table className="table">
-                            <thead>
+                            <thead className={ordersData.length > 0 ? '' : 'hidden'}>
                                 <tr>
                                     <th>Order_id</th>
                                     <th>Your Name</th>
@@ -54,9 +97,8 @@ function OrderStatus() {
                             </thead>
                             <tbody>
                                 {ordersData.map((order, index) => {
-                                    console.log(order)
 
-                                    return <tr>
+                                    return <tr key={index}>
                                         {/* <td>{Math.floor(Math.random() * 90000) + 10000}</td> */}
                                         <td>{order.order_id}</td>
                                         <td>{order.b_name}</td>
@@ -68,7 +110,7 @@ function OrderStatus() {
                                         <td>{order.fuel_delivery_address}</td>
                                         <td>{order.b_phone_number}</td>
                                         <td>{order.payment_mode}</td>
-                                        <tr><td><button className="delete-row">delete</button></td></tr>
+                                        <td><button className="delete-row" onClick={() => cancelOrder(order.order_id)}>Cancel Order</button></td>
                                     </tr>
                                 })}
                             </tbody>
@@ -76,7 +118,7 @@ function OrderStatus() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

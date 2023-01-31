@@ -27,8 +27,18 @@
 }
 
 .delete-row {
-    background-color: red;
+    background-color: rgb(221, 66, 66);
     font-size: 15px;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 2px;
+    border-radius: 7px;
+}
+
+.delete-row:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+.hidden {
+    display: none;
 }
