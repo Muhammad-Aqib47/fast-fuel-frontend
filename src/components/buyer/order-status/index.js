@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 
 
-function OrderStatus() {
+function OrderStatus(id) {
     const [ordersData, setOrdersData] = useState([])
 
 
@@ -30,27 +30,19 @@ function OrderStatus() {
 
 
     //delete row from orders table where id == id
-    const cancelOrder = async (id) => {
-        try {
-            const response = await fetch(`http://localhost:3001/api/orders/${id}`, {
-                method: 'DELETE'
-            });
-            const data = await response.json()
-            console.log("data deleted", data)
-
-        } catch (error) {
-            console.log(error)
-        }
+    const cancelOrder = (id) => {
 
         Swal.fire({
             title: 'Are you sure?',
             text: "To cancel your order !",
-            type: 'warning',
+            icon: 'warning',
             buttonsStyling: false,
             showCancelButton: true,
             cancelButtonText: 'No',
             confirmButtonText: 'Yes',
             allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false
 
         }).then((result) => {
             if (result.isConfirmed) {
@@ -60,22 +52,32 @@ function OrderStatus() {
                     icon: 'success',
                     buttonsStyling: false,
                     confirmButtonText: 'OK'
-                })
-                    .then(() => {
-                        window.location.reload();
-                    });
+                }).then(async () => {
+                    try {
+                        const response = await fetch(`http://localhost:3001/api/orders/${id}`, {
+                            method: 'DELETE'
+                        });
+                        const data = await response.json()
+                        console.log("data deleted", data)
+
+                    } catch (error) {
+                        console.log(error)
+                    }
+                }).then(() => {
+                    window.location.reload();
+                });
             }
         })
     }
 
     return (
 
-        <div className="wrapper">
+        <div>
             <SideBar />
             <div className="main_content">
                 <div className="container">
                     <div className="title">
-                        <h2> Order Status </h2>
+                        <h2 className="header"> Order Status </h2>
                     </div>
 
                     <div className="table_div">

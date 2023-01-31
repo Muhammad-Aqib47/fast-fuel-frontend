@@ -1,3 +1,13 @@
+.main_content {
+    width: 100%;
+    margin-left: 200px;
+}
+
+.container {
+    position: absolute;
+
+}
+
 .table_div {
     margin-left: 5px;
     margin-top: 160px;

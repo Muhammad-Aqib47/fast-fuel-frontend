@@ -33,6 +33,7 @@ function Form() {
     const createOrder = async (event) => {
         event.preventDefault();
 
+
         //---------------sweet alert------------------------------------//
         Swal.fire({
             title: 'Are you sure?',
@@ -43,6 +44,8 @@ function Form() {
             cancelButtonText: 'No',
             confirmButtonText: 'Yes',
             allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false
 
         }).then((result) => {
             if (result.isConfirmed) {
@@ -52,6 +55,20 @@ function Form() {
                     icon: 'success',
                     buttonsStyling: false,
                     confirmButtonText: 'OK'
+                }).then(async () => {
+                    try {
+                        const response = await fetch('http://localhost:3001/api/orders', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'Application/json' },
+                            body: JSON.stringify(allInputValues)
+
+                        });
+                        const data = await response.json()
+
+                        console.log('data is here', data)
+                    } catch (error) {
+                        console.log(error);
+                    }
                 }).then(() => {
                     window.location.reload();
                 });
@@ -72,19 +89,7 @@ function Form() {
         }
         console.log(allInputValues)
 
-        try {
-            const response = await fetch('http://localhost:3001/api/orders', {
-                method: 'POST',
-                headers: { 'Content-Type': 'Application/json' },
-                body: JSON.stringify(allInputValues)
 
-            });
-            const data = await response.json()
-
-            console.log('data is here', data)
-        } catch (error) {
-            console.log(error);
-        }
     }
 
 
@@ -161,84 +166,85 @@ function Form() {
     return (
         <div>
             <div className="main_content">
-                <div className="container">
-                    <div className="title">
-                        <h2> Order your Fuel </h2>
-                    </div>
-                    <div className="d-flex">
-                        <form onSubmit={createOrder}>
-                            <label>
-                                <span> Name <span className="required"> * </span></span>
-                                <input onChange={inputHandler} type="text" id='name' value={formData.name} name="name" placeholder='Enter you name' required />
-                            </label>
-
-
-                            <label>
-                                <span>City <span className="required">*</span></span>
-                                <select onChange={inputHandler} id='selectCity' value={formData.selectCity} name="selectCity" >
-                                    <option value="select"> Choose City... </option>
-                                    {city.map(singleCity => <option>{singleCity}</option>)}
-                                </select>
-                            </label>
-
-
-                            <label>
-                                <span>Available Fuel Station <span className="required">*</span></span>
-                                <select onChange={inputHandler} id='selectSeller' value={formData.selectSeller} name="selectSeller">
-                                    <option value="select"> Choose Fuel Station... </option>
-                                    {sellers.map(seller => <option>{seller.available_fuel_station}</option>)}
-                                </select>
-                            </label>
-
-
-                            <label>
-                                <span>Type Of Fuel <span className="required">*</span></span>
-                                <select onChange={inputHandler} id='selectFueltype' value={formData.selectFueltype} name="selectFueltype">
-                                    <option value="select">Choose Fuel Type... </option>
-                                    {fuelTypes.map((fuelType) => <option>{fuelType.product_name}</option>)}
-                                </select>
-                            </label>
-
-
-                            <label>
-                                <span> Price of Fuel /<span className='liter'>per liter</span> </span>
-                                <select onChange={inputHandler} id='fuelPrice' value={formData.fuelPrice} name="fuelPrice">
-                                    <option value="select"></option>
-                                    {fuelPrice.map((price) => <option>{price.fuel_price}</option>)}
-
-
-                                </select>
-                            </label>
-                            <label>
-                                <span> Quantity of Fuel <span className="required">*</span> </span>
-                                <input type="number" onChange={inputHandler} id='fuelQuantity' value={formData.fuelQuantity} name="fuelQuantity" placeholder='Please enter quantity of fuel' required />
-                            </label>
-                            <label>
-                                <span> Fuel Delivery Address <span className="required">*</span></span>
-                                <input type="text" onChange={inputHandler} id='fuelDeliveryAddress' value={formData.fuelDeliveryAddress} name="fuelDeliveryAddress" required />
-                            </label>
-
-                            <label>
-                                <span> Phone Number <span className="required">*</span></span>
-                                <input type="number" onChange={inputHandler} id='phoneNumber' value={formData.phoneNumber} name="phoneNumber" required />
-                            </label>
-
-                            <label>
-                                <span> Payment Mode <span className="required">*</span></span>
-                                <select onChange={inputHandler} id='selectPaymentMethod' value={formData.selectPaymentMethod} name="selectPaymentMethod">
-                                    <option value="select"> Select a payment method... </option>
-                                    <option>Cash On Delivery</option>
-
-                                </select>
-                            </label>
-
-                            <button type='submit' className='place-order'> Place Order </button>
-                        </form>
-
-                    </div>
+                <div className="title">
+                    <h2 className='header'> Order your Fuel </h2>
                 </div>
+
+                <form onSubmit={createOrder} className="form">
+                    <label className='form-label'>
+                        <span> Name <span className="required"> * </span></span>
+                        <input onChange={inputHandler} type="text" id='name' value={formData.name} name="name" placeholder='Enter you name' required />
+                    </label>
+
+
+                    <label className='form-label'>
+                        <span>City <span className="required">*</span></span>
+                        <select className='select' onChange={inputHandler} id='selectCity' value={formData.selectCity} name="selectCity" >
+                            <option value="select"> Choose City... </option>
+                            {city.map(singleCity => <option>{singleCity}</option>)}
+                        </select>
+                    </label>
+
+
+                    <label className='form-label'>
+                        <span>Available Fuel Station <span className="required">*</span></span>
+                        <select className='select' onChange={inputHandler} id='selectSeller' value={formData.selectSeller} name="selectSeller">
+                            <option value="select"> Choose Fuel Station... </option>
+                            {sellers.map(seller => <option>{seller.available_fuel_station}</option>)}
+                        </select>
+                    </label>
+
+
+                    <label className='form-label'>
+                        <span>Type Of Fuel <span className="required">*</span></span>
+                        <select className='select' onChange={inputHandler} id='selectFueltype' value={formData.selectFueltype} name="selectFueltype">
+                            <option value="select">Choose Fuel Type... </option>
+                            {fuelTypes.map((fuelType) => <option>{fuelType.product_name}</option>)}
+                        </select>
+                    </label>
+
+
+                    <label className='form-label'>
+                        <span> Price of Fuel /<span className='liter'>per liter</span> </span>
+                        <select className='select' onChange={inputHandler} id='fuelPrice' value={formData.fuelPrice} name="fuelPrice">
+                            <option value="select"></option>
+                            {fuelPrice.map((price) => <option>{price.fuel_price}</option>)}
+                        </select>
+                    </label>
+
+
+                    <label className='form-label'>
+                        <span> Quantity of Fuel / <span className='liter'>in liter</span><span className="required">*</span> </span>
+                        <input type="number" onChange={inputHandler} id='fuelQuantity' value={formData.fuelQuantity} name="fuelQuantity" placeholder='Enter quantity of fuel' required />
+                    </label>
+
+
+                    <label className='form-label'>
+                        <span> Fuel Delivery Address <span className="required">*</span></span>
+                        <input type="text" onChange={inputHandler} id='fuelDeliveryAddress' value={formData.fuelDeliveryAddress} name="fuelDeliveryAddress" required />
+                    </label>
+
+
+                    <label className='form-label'>
+                        <span> Phone Number <span className="required">*</span></span>
+                        <input type="number" onChange={inputHandler} id='phoneNumber' value={formData.phoneNumber} name="phoneNumber" required />
+                    </label>
+
+
+                    <label className='form-label'>
+                        <span> Payment Mode <span className="required">*</span></span>
+                        <select className='select' onChange={inputHandler} id='selectPaymentMethod' value={formData.selectPaymentMethod} name="selectPaymentMethod">
+                            <option value="select"> Select a payment method... </option>
+                            <option>Cash On Delivery</option>
+                        </select>
+                    </label>
+
+                    <button type='submit' className='place-order'> Place Order </button>
+                </form>
+
             </div>
         </div>
+
 
     );
 }
