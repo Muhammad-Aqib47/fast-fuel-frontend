@@ -38,7 +38,7 @@ function inputHandler(e){
 
     return (
         <div className="container-fluid">
-            <h1 className='contact'>Contact Us</h1>
+            <h1 className='contact-heading'>Contact Us</h1>
             <div className="content">
                 <div className="left-side">
                     <div className="address details">

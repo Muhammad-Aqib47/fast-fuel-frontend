@@ -5,7 +5,7 @@ function Navbar() {
     <div>
       <nav>
         <div className="left">
-          <img src="./images/logowhite.png" alt="logo" classNameName="logo" />
+          <img src="./images/logowhite.png" alt="logo" className="logo" />
         </div>
         <div className="middle">
           <a href="#section-1">Home</a>
