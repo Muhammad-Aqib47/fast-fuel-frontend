@@ -1,0 +1,52 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  label,
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
+  
+  textarea {
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    resize: none;
+  }
+  
+  button[type="submit"] {
+    width: 150px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

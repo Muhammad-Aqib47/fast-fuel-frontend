@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-function Carousal() {
+function Banner() {
     return (
         <div>
             <div className="banner" id='section-1'>
@@ -13,4 +13,4 @@ function Carousal() {
         </div>
     );
 }
-export default Carousal;
+export default Banner;

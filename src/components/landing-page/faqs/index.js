@@ -1,9 +1,7 @@
 import './style.css'
 
-
 function Faqs() {
   return (
-   
     <div id='section-4'>
       <h3 className='faqText'>FAQs</h3>
       <div className="faqs">

@@ -1,30 +1,25 @@
 import './App.css';
 import Navbar from './components/landing-page/navbar';
-import Carousal from './components/landing-page/banner';
+import Banner from './components/landing-page/banner';
 import Video from './components/landing-page/how it works';
 import ServicesCard from './components/landing-page/services-card';
+import Faqs from './components/landing-page/faqs';
 import ServeAreas from './components/landing-page/where we serve';
 import Footer from './components/landing-page/footer';
-import Faqs from './components/landing-page/faqs';
-
-
+import Contact from './components/landing-page/contact-us';
 
 function App() {
   return (
     <div>
-      <Navbar />
-      {/* <Routes>
-      <Route path='/' element = {<Carousal />} />
-      <Route path='/how-it-work' element = {<Video />} />
-
-      </Routes> */}
-    
-      <Carousal/>
+      <Navbar /> 
+      <Banner/>
       <Video/>
       <ServicesCard />
       <Faqs/>
       <ServeAreas/>
+      <Contact/>
       <Footer/>
+     
     </div>
   );
 }
