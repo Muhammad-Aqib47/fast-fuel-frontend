@@ -65,17 +65,17 @@ function inputHandler(e){
                     <p>If you have any work from us or any types of quries related to our fast fuel delivery, you can send us message from here. It's our pleasure to help you.</p>
                     <form onSubmit={createQuery}>
                         <div className="input-box">
-                            <input type="text" placeholder="Enter your name" onChange={inputHandler} name='name' value={formData.name}/>
+                            <input type="text" placeholder="Enter your name" onChange={inputHandler} name='name' required value={formData.name}/>
                         </div>
                         <div className="input-box">
-                            <input type="text" placeholder="Enter your email" onChange={inputHandler} name='email' value={formData.email}/>
+                            <input type="text" placeholder="Enter your email" onChange={inputHandler} name='email' required value={formData.email}/>
                         </div>
                         <div className="input-box message-box">
-                             <textarea rows="9" cols="70"onChange={inputHandler} name='query' value={formData.query}/>  
+                             <textarea rows="9" cols="70"onChange={inputHandler} name='query' required value={formData.query}/>  
                         </div>
-                        <div className="button">
-                            <button type='submit'><span>SUBMIT</span></button>
-                        </div>
+                     
+                            <button type='submit' className='submit-button'><span className='submit-button-span'>SUBMIT</span></button>
+                       
                     </form>
                 </div>
             </div>

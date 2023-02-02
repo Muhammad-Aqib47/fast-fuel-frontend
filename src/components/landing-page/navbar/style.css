@@ -64,6 +64,7 @@ nav button span:after {
   top: 0;
   right: -20px;
   transition: 0.5s;
+  width: 27px;
 }
 
 nav button:hover span {

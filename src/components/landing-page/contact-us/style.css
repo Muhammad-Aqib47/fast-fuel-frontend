@@ -110,59 +110,50 @@
     padding-top: 6px;
 }
 
-.right-side .button {
-    display: inline-block;
-    margin-top: 12px;
-}
-
-.right-side .button input[type="button"] {
-    color: #fff;
-    font-size: 18px;
-    outline: none;
+.submit-button {
+    border-radius: 10px;
     border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    background: #3e2093;
+    width: 80px;
+    height: 30px;
+    margin: 0px 5px 0px 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-.button button{
-    border-radius: 5px;
-    padding: 10px;
-
-}
-.button button[type="submit"]:hover {
-    background: red;
-}
-.button button:hover {
-    background-color: red;
+    background: #4b4276;
+    color: white;
+  }
+  
+  .submit-button:hover {
+    background-color: #615a80;
     color: white;
     font-size: 15px;
   
   }
-.button button span {
+  
+  .submit-button .submit-button-span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
   }
   
-.button button span:after {
+  .submit-button .submit-button-span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
     top: 0;
     right: -20px;
     transition: 0.5s;
+    width: 27px;
   }
-  .button button:hover span {
+  
+  .submit-button:hover .submit-button-span {
     padding-right: 25px;
   }
   
-  .button button:hover span:after {
+   .submit-button:hover .submit-button-span:after {
     opacity: 1;
     right: 0;
   }
+  
   
 
 @media (max-width: 950px) {
