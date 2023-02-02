@@ -38,7 +38,7 @@ function inputHandler(e){
 
     return (
         <div className="container-fluid">
-            <h1>Contact Us</h1>
+            <h1 className='contact'>Contact Us</h1>
             <div className="content">
                 <div className="left-side">
                     <div className="address details">
@@ -62,7 +62,7 @@ function inputHandler(e){
                 </div>
                 <div className="right-side">
                     <div className="topic-text">Send us a message</div>
-                    <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+                    <p>If you have any work from us or any types of quries related to our fast fuel delivery, you can send us message from here. It's our pleasure to help you.</p>
                     <form onSubmit={createQuery}>
                         <div className="input-box">
                             <input type="text" placeholder="Enter your name" onChange={inputHandler} name='name' value={formData.name}/>
@@ -74,7 +74,7 @@ function inputHandler(e){
                              <textarea rows="9" cols="70"onChange={inputHandler} name='query' value={formData.query}/>  
                         </div>
                         <div className="button">
-                            <button type='submit'>SUBMIT</button>
+                            <button type='submit'><span>SUBMIT</span></button>
                         </div>
                     </form>
                 </div>

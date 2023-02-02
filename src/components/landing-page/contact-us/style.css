@@ -1,13 +1,16 @@
 /* Google Font CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-h1 {
+/* .banner-heading {
     color: black;
     text-align: center;
     font-family: Georgia, serif;
     font-size: 50px;
+} */
+.contact{
+    color: black;
+    text-align: center;
 }
-
 .container-fluid {
     margin-left: 50px;
     width: 85%;
@@ -75,7 +78,7 @@ h1 {
 .content .right-side .topic-text {
     font-size: 23px;
     font-weight: 600;
-    color: #3e2093;
+    color: black;
 }
 
 .right-side .input-box {
@@ -121,10 +124,44 @@ h1 {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+.button button{
+    border-radius: 5px;
+    padding: 10px;
 
-.button input[type="button"]:hover {
-    background: #5029bc;
 }
+.button button[type="submit"]:hover {
+    background: red;
+}
+.button button:hover {
+    background-color: red;
+    color: white;
+    font-size: 15px;
+  
+  }
+.button button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+.button button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .button button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
 
 @media (max-width: 950px) {
     .container-fluid {

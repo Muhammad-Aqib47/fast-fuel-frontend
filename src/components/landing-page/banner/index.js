@@ -7,7 +7,7 @@ function Banner() {
             <div className="banner" id='section-1'>
                 <img src="./images/is.jpg" alt="Banner" />
                 <div className="banner-text">
-                <h1><span>On-Demand Fuel Delivery Service</span></h1>
+                <h1 className='banner-heading'><span>On-Demand Fuel Delivery Service</span></h1>
                 </div>
             </div>
         </div>

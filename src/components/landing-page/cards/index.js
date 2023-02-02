@@ -7,7 +7,7 @@ function Cards(props) {
         <div className="center" id='section-3'>
             <div className="card">
                 <h2>{title}</h2>
-                <img src={img} alt="img" />
+                <img className='img' src={img} alt="img" />
                 <p className="title">{desc}</p>
             </div>
         </div>

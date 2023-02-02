@@ -3,19 +3,19 @@
     font-family: Georgia, serif;
     font-size: 30px;
   }
-  h2 span {
+  .heading span {
     transition: 0.5s ease-out;
   }
 
-  h2:hover span:nth-child(1) {
+  .heading:hover span:nth-child(1) {
     margin-right: 5px;
   }
 
-  h2:hover span:nth-child(2) {
+  .heading:hover span:nth-child(2) {
     margin-left: 30px;
   }
 
-  h2:hover span {
+  .heading:hover span {
     color: red;
     text-shadow: 0 0 10px #fff, 0 0 20px lightcoral, 0 0 40px #fff;
   }
