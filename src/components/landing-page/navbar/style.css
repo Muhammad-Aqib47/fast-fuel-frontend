@@ -1,4 +1,4 @@
-nav {
+.navbar {
   display: flex;
   height: 50px;
   align-items: center;
@@ -7,34 +7,34 @@ nav {
   position: fixed;
   width: 100%;
 }
-
-.left {
-  flex: 1;
+.logo {
+  width: 120px;
+  height: auto;
 }
-
-.middle {
+.nav-links {
   flex: 2;
   display: flex;
   justify-content: center;
 }
 
-.right {
+.nav-right-button {
   flex: 1;
   display: flex;
   justify-content: flex-end;
 }
 
-nav a {
+.nav-links .anchor {
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
 }
 
-nav a:hover {
+.nav-links .anchor:hover {
   background-color: #444;
 }
 
-nav button {
+.nav-right .button {
+  background-color: #00b0ff;
   border-radius: 2px;
   border: none;
   width: 80px;
@@ -43,21 +43,21 @@ nav button {
   cursor: pointer;
 }
 
-nav button:hover {
-  background-color: red;
+.nav-right .button:hover {
+  background-color: #ff9d00;
   color: white;
   font-size: 15px;
 
 }
 
-nav button span {
+.nav-right .button .span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-nav button span:after {
+.nav-right .button .span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -67,16 +67,11 @@ nav button span:after {
   width: 27px;
 }
 
-nav button:hover span {
+.nav-right .button:hover .span {
   padding-right: 25px;
 }
 
-nav button:hover span:after {
+.nav-right .button:hover .span:after {
   opacity: 1;
   right: 0;
-}
-
-.logo {
-  width: 80px;
-  height: auto;
 }

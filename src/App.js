@@ -11,7 +11,7 @@ import Contact from './components/landing-page/contact-us';
 function App() {
   return (
     <div>
-      <Navbar /> 
+      <Navbar />
       <Banner/>
       <Video/>
       <ServicesCard />

@@ -3,19 +3,19 @@
     font-family: Georgia, serif;
     font-size: 30px;
   }
-  .heading span {
+  .vid-heading .vid-heading-span {
     transition: 0.5s ease-out;
   }
 
-  .heading:hover span:nth-child(1) {
+  .vid-heading:hover .vid-heading-span:nth-child(1) {
     margin-right: 5px;
   }
 
-  .heading:hover span:nth-child(2) {
+  .vid-heading:hover .vid-heading-span:nth-child(2) {
     margin-left: 30px;
   }
 
-  .heading:hover span {
+  .vid-heading:hover .vid-heading-span {
     color: red;
     text-shadow: 0 0 10px #fff, 0 0 20px lightcoral, 0 0 40px #fff;
   }

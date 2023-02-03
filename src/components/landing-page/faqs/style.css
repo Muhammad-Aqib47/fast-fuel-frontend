@@ -1,4 +1,4 @@
-.faqText{
+.faq-heading{
     text-align: center;
     float: left;
     font-size: 100px;
@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
   }
-  .container{
+  .faqs-container{
     width: 100%;
     max-width: 80rem;
     margin: 0 auto;
@@ -36,11 +36,11 @@
     justify-content: space-between;
     padding: 1rem 0;
   }
-  .accordion-link h3{
+  .accordion-link .heading-3{
     font-weight:500;
     font-size: 20px;
   }
-  .accordion-link i{
+  /* .accordion-link i{
     color: #e7d5ff;
     padding: .5rem;
     
@@ -55,8 +55,8 @@
     font-size: 10px;
     color: rgba(255, 255, 255, 0.4);
     padding: 0 0 1px 5px;
-  }
-  .accordion-link div{
+  } */
+  .accordion-link{
     display: flex;
   }
   .accordion-link .ion-md-arrow-down{
@@ -68,7 +68,7 @@
     position: relative;
     background-color: #000;
   }
-  .answer p{
+  .answer .faq-answer-para{
     font-size: larger;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
@@ -79,11 +79,11 @@
   .accordion-item:target .answer{
     max-height: 20rem;
   }
-  .accordion-item:target .accordion-link .ion-md-arrow-forward{
+  /* .accordion-item:target .accordion-link .ion-md-arrow-forward{
     display: none
   }
   .accordion-item:target .accordion-link .ion-md-arrow-down{
     display: block;
-  }
+  } */
 
 

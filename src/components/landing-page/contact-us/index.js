@@ -24,6 +24,7 @@ const createQuery = async (e)=>{
         });
         const data = await response.json()
         console.log('Query is received', data)
+        alert("Your message has been received successfully.")
     } catch (error) {
         console.log(error)
     }
@@ -34,30 +35,28 @@ function inputHandler(e){
     const{name, value} =e.target;
     setFormData({...formData,[name]: value});
 }
-
-
     return (
-        <div className="container-fluid">
+        <div className="container-fluid" id='section-5'>
             <h1 className='contact-heading'>Contact Us</h1>
             <div className="content">
                 <div className="left-side">
                     <div className="address details">
                         <i className="fas fa-map-marker-alt"></i>
                         <div className="topic">Address</div>
-                        <div className="text-one">Surkhet, NP12</div>
-                        <div className="text-two">Birendranagar 06</div>
+                        <div className="text-one">DHA, Phase 8</div>
+                        <div className="text-two">Extension Park View</div>
                     </div>
                     <div className="phone details">
                         <i className="fas fa-phone-alt"></i>
                         <div className="topic">Phone</div>
-                        <div className="text-one">+0098 9893 5647</div>
-                        <div className="text-two">+0096 3434 5678</div>
+                        <div className="text-one">+92 303 0000000</div>
+                        <div className="text-two">+92 300 1234578</div>
                     </div>
                     <div className="email details">
                         <i className="fas fa-envelope"></i>
                         <div className="topic">Email</div>
-                        <div className="text-one">codinglab@gmail.com</div>
-                        <div className="text-two">info.codinglab@gmail.com</div>
+                        <div className="text-one">fuel-fast@gmail.com</div>
+                        <div className="text-two">info.fast-fuel@gmail.com</div>
                     </div>
                 </div>
                 <div className="right-side">
@@ -73,9 +72,7 @@ function inputHandler(e){
                         <div className="input-box message-box">
                              <textarea rows="9" cols="70"onChange={inputHandler} name='query' required value={formData.query}/>  
                         </div>
-                     
                             <button type='submit' className='submit-button'><span className='submit-button-span'>SUBMIT</span></button>
-                       
                     </form>
                 </div>
             </div>
