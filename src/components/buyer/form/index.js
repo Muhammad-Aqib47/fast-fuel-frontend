@@ -24,7 +24,8 @@ function Form() {
     })
 
     function inputHandler(e) {
-        const { name, value } = e.target;
+
+        let { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
 
 
@@ -93,6 +94,8 @@ function Form() {
     }
 
 
+
+
     useEffect(() => {
 
         //------------------------------------Filter out city data----------------------//
@@ -117,8 +120,9 @@ function Form() {
 
         //-------------------------filter out sellers according to city-------------------//
         const getSellersData = async () => {
+
             try {
-                const response = await fetch("http://localhost:3001/api/buyers/getSellers")
+                const response = await fetch(`http://localhost:3001/api/buyers/getSellers/${formData.selectCity}`)
                 const data = await response.json()
                 setSellers(data)
             } catch (error) {
@@ -132,7 +136,7 @@ function Form() {
         //-------------------------Filter fuel type according sellers-------------------//
         const getFuelTypeData = async () => {
             try {
-                const response = await fetch('http://localhost:3001/api/buyers/getFuelType')
+                const response = await fetch(`http://localhost:3001/api/buyers/getFuelType/${formData.selectSeller}`)
                 const data = await response.json()
                 setFuelTypes(data)
             } catch (error) {
@@ -148,9 +152,10 @@ function Form() {
         //----------------------Filter fuel price according fuel type--------------------//
         const getFuelPriceData = async () => {
             try {
-                const response = await fetch('http://localhost:3001/api/buyers/getFuelPrice')
+                const response = await fetch(`http://localhost:3001/api/buyers/getFuelPrice/${formData.selectFueltype}`)
                 const data = await response.json()
                 setFuelPrice(data)
+                console.log("fuel price is here", data)
             } catch (error) {
                 console.log(error)
             }
@@ -158,7 +163,7 @@ function Form() {
         }
         getFuelPriceData()
         //-------------------------------------------<><><><><><>---------------------------//
-    }, [])
+    }, [formData.selectCity, formData.selectSeller, formData.selectFueltype])
 
 
 
@@ -187,7 +192,7 @@ function Form() {
 
 
                     <label className='form-label'>
-                        <span>Available Fuel Station <span className="required">*</span></span>
+                        <span>Seller Fuel Station <span className="required">*</span></span>
                         <select className='select' onChange={inputHandler} id='selectSeller' value={formData.selectSeller} name="selectSeller">
                             <option value="select"> Choose Fuel Station... </option>
                             {sellers.map(seller => <option>{seller.available_fuel_station}</option>)}
@@ -196,7 +201,7 @@ function Form() {
 
 
                     <label className='form-label'>
-                        <span>Type Of Fuel <span className="required">*</span></span>
+                        <span>Fuel Type <span className="required">*</span></span>
                         <select className='select' onChange={inputHandler} id='selectFueltype' value={formData.selectFueltype} name="selectFueltype">
                             <option value="select">Choose Fuel Type... </option>
                             {fuelTypes.map((fuelType) => <option>{fuelType.product_name}</option>)}
@@ -205,7 +210,7 @@ function Form() {
 
 
                     <label className='form-label'>
-                        <span> Price of Fuel /<span className='liter'>per liter</span> </span>
+                        <span> Fuel Price /<span className='liter'>liter</span> </span>
                         <select className='select' onChange={inputHandler} id='fuelPrice' value={formData.fuelPrice} name="fuelPrice">
                             <option value="select"></option>
                             {fuelPrice.map((price) => <option>{price.fuel_price}</option>)}
@@ -214,7 +219,7 @@ function Form() {
 
 
                     <label className='form-label'>
-                        <span> Quantity of Fuel / <span className='liter'>in liter</span><span className="required">*</span> </span>
+                        <span> Fuel Quantity / <span className='liter'>liter</span><span className="required">*</span> </span>
                         <input type="number" onChange={inputHandler} id='fuelQuantity' value={formData.fuelQuantity} name="fuelQuantity" placeholder='Enter quantity of fuel' required />
                     </label>
 
