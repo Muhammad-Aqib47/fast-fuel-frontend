@@ -3,15 +3,9 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-  font-family: 'Josefin Sans', sans-serif;
+
 }
 
-body {
-  background-color: #f3f5f9;
-}
 
 
 .sidebar {
@@ -20,6 +14,8 @@ body {
   background: #4b4276;
   padding-top: 30px;
   position: fixed;
+  font-family: 'Josefin Sans', sans-serif;
+
 }
 
 .Ffuel {
@@ -33,7 +29,8 @@ body {
   color: #bdb8d7;
   display: block;
   cursor: pointer;
-
+  list-style: none;
+  text-decoration: none;
 }
 
 .lists {

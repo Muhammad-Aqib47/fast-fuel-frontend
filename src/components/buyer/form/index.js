@@ -70,8 +70,20 @@ function Form() {
                     } catch (error) {
                         console.log(error);
                     }
+                    //-----after submit form all fields to be empty
                 }).then(() => {
-                    window.location.reload();
+                    setFormData({
+                        name: "",
+                        selectCity: "",
+                        selectSeller: "",
+                        selectFueltype: "",
+                        fuelPrice: "",
+                        fuelQuantity: "",
+                        fuelDeliveryAddress: "",
+                        phoneNumber: "",
+                        selectPaymentMethod: "",
+
+                    })
                 });
             }
         })
@@ -218,6 +230,7 @@ function Form() {
                     <label className='form-label'>
                         <span> Fuel Price /<span className='liter'>liter</span> </span>
                         <select className='select-price' onChange={inputHandler} value={formData.fuelPrice} name="fuelPrice">
+                            <option>Please select fuel price......</option>
                             {fuelPrice.map((price) => <option>{price.fuel_price}</option>)}
                         </select>
                     </label>
@@ -249,7 +262,7 @@ function Form() {
                         </select>
                     </label>
 
-                    <button type='submit' className='place-order'> Place Order </button>
+                    <button type='submit' className="button-48"><span class="button48-text">Place Order</span></button>
                 </form>
 
             </div>

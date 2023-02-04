@@ -112,7 +112,7 @@ function OrderStatus(id) {
                                         <td>{order.fuel_delivery_address}</td>
                                         <td>{order.b_phone_number}</td>
                                         <td>{order.payment_mode}</td>
-                                        <td><button className="delete-row" onClick={() => cancelOrder(order.order_id)}>Cancel Order</button></td>
+                                        <td><button onClick={() => cancelOrder(order.order_id)} className="button-57" ><span className="button-57-text"><i className="fa-solid fa-trash"></i></span><span>Cancel Order</span></button></td>
                                     </tr>
                                 })}
                             </tbody>
