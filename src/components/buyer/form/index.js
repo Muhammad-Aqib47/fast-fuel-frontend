@@ -154,8 +154,14 @@ function Form() {
             try {
                 const response = await fetch(`http://localhost:3001/api/buyers/getFuelPrice/${formData.selectFueltype}`)
                 const data = await response.json()
-                setFuelPrice(data)
-                console.log("fuel price is here", data)
+
+                //----------------Remove dublicate values in array
+                const isDuplicate = (item, index, array) => index === array.findIndex(
+                    (obj) => obj.p1 === item.p1 // compare properties
+                )
+                const uniquePrice = data.filter(isDuplicate);
+                setFuelPrice(uniquePrice);
+                console.log("data is here", uniquePrice);
             } catch (error) {
                 console.log(error)
             }
@@ -178,14 +184,14 @@ function Form() {
                 <form onSubmit={createOrder} className="form">
                     <label className='form-label'>
                         <span> Name <span className="required"> * </span></span>
-                        <input onChange={inputHandler} type="text" id='name' value={formData.name} name="name" placeholder='Enter you name' required />
+                        <input onChange={inputHandler} type="text" value={formData.name} name="name" placeholder='Enter you name' required />
                     </label>
 
 
                     <label className='form-label'>
                         <span>City <span className="required">*</span></span>
-                        <select className='select' onChange={inputHandler} id='selectCity' value={formData.selectCity} name="selectCity" >
-                            <option value="select"> Choose City... </option>
+                        <select className='select' onChange={inputHandler} value={formData.selectCity} name="selectCity" >
+                            <option> Choose City... </option>
                             {city.map(singleCity => <option>{singleCity}</option>)}
                         </select>
                     </label>
@@ -193,8 +199,8 @@ function Form() {
 
                     <label className='form-label'>
                         <span>Seller Fuel Station <span className="required">*</span></span>
-                        <select className='select' onChange={inputHandler} id='selectSeller' value={formData.selectSeller} name="selectSeller">
-                            <option value="select"> Choose Fuel Station... </option>
+                        <select className='select' onChange={inputHandler} value={formData.selectSeller} name="selectSeller">
+                            <option> Choose Fuel Station... </option>
                             {sellers.map(seller => <option>{seller.available_fuel_station}</option>)}
                         </select>
                     </label>
@@ -202,8 +208,8 @@ function Form() {
 
                     <label className='form-label'>
                         <span>Fuel Type <span className="required">*</span></span>
-                        <select className='select' onChange={inputHandler} id='selectFueltype' value={formData.selectFueltype} name="selectFueltype">
-                            <option value="select">Choose Fuel Type... </option>
+                        <select className='select' onChange={inputHandler} value={formData.selectFueltype} name="selectFueltype">
+                            <option>Choose Fuel Type... </option>
                             {fuelTypes.map((fuelType) => <option>{fuelType.product_name}</option>)}
                         </select>
                     </label>
@@ -211,8 +217,7 @@ function Form() {
 
                     <label className='form-label'>
                         <span> Fuel Price /<span className='liter'>liter</span> </span>
-                        <select className='select' onChange={inputHandler} id='fuelPrice' value={formData.fuelPrice} name="fuelPrice">
-                            <option value="select"></option>
+                        <select className='select-price' onChange={inputHandler} value={formData.fuelPrice} name="fuelPrice">
                             {fuelPrice.map((price) => <option>{price.fuel_price}</option>)}
                         </select>
                     </label>
@@ -220,26 +225,26 @@ function Form() {
 
                     <label className='form-label'>
                         <span> Fuel Quantity / <span className='liter'>liter</span><span className="required">*</span> </span>
-                        <input type="number" onChange={inputHandler} id='fuelQuantity' value={formData.fuelQuantity} name="fuelQuantity" placeholder='Enter quantity of fuel' required />
+                        <input type="number" onChange={inputHandler} value={formData.fuelQuantity} name="fuelQuantity" placeholder='Enter quantity of fuel' required />
                     </label>
 
 
                     <label className='form-label'>
                         <span> Fuel Delivery Address <span className="required">*</span></span>
-                        <input type="text" onChange={inputHandler} id='fuelDeliveryAddress' value={formData.fuelDeliveryAddress} name="fuelDeliveryAddress" required />
+                        <input type="text" onChange={inputHandler} value={formData.fuelDeliveryAddress} name="fuelDeliveryAddress" required />
                     </label>
 
 
                     <label className='form-label'>
                         <span> Phone Number <span className="required">*</span></span>
-                        <input type="number" onChange={inputHandler} id='phoneNumber' value={formData.phoneNumber} name="phoneNumber" required />
+                        <input type="number" onChange={inputHandler} value={formData.phoneNumber} name="phoneNumber" required />
                     </label>
 
 
                     <label className='form-label'>
                         <span> Payment Mode <span className="required">*</span></span>
-                        <select className='select' onChange={inputHandler} id='selectPaymentMethod' value={formData.selectPaymentMethod} name="selectPaymentMethod">
-                            <option value="select"> Select a payment method... </option>
+                        <select className='select' onChange={inputHandler} value={formData.selectPaymentMethod} name="selectPaymentMethod">
+                            <option> Select a payment method... </option>
                             <option>Cash On Delivery</option>
                         </select>
                     </label>
