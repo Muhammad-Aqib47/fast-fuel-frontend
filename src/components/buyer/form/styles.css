@@ -128,27 +128,6 @@ input[type="tel"] {
 }
 
 
-/* .place-order {
-  width: 13%;
-  margin-top: 10px;
-  margin-left: 50%;
-  padding: 10px;
-  border: none;
-  border-radius: 30px;
-  background: #00B0FF;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  font-family: 'Josefin Sans', sans-serif;
-
-
-}
-
-.place-order:hover {
-  cursor: pointer;
-  background: #ff9D00;
-} */
-
 .liter {
   font-size: 90%;
   color: #2642bd;

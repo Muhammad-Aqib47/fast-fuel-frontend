@@ -4,7 +4,7 @@ import './sidebar/style.css'
 
 function BuyerForm() {
     return (
-        <div className='wrapper'>
+        <div>
 
             <SideBar />
             <Form />

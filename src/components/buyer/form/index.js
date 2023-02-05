@@ -262,7 +262,7 @@ function Form() {
                         </select>
                     </label>
 
-                    <button type='submit' className="button-48"><span class="button48-text">Place Order</span></button>
+                    <button type='submit' className="button-48"><span className="button48-text">Place Order</span></button>
                 </form>
 
             </div>

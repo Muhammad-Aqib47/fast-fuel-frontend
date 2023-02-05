@@ -40,20 +40,7 @@
 
 }
 
-/* .delete-row {
-    background-color: rgb(221, 66, 66);
-    font-size: 15px;
-    color: rgb(255, 255, 255);
-    padding: 2px;
-    border-radius: 6px;
-    font-family: 'Josefin Sans', sans-serif;
 
-}
-
-.delete-row:hover {
-    cursor: pointer;
-    background-color: red;
-} */
 
 .hidden {
     display: none;
@@ -112,15 +99,19 @@
     transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
     transform: skewY(9.3deg) scaleY(0);
     z-index: 50;
+
+
 }
 
 .button-57:hover:after {
     transform-origin: bottom center;
     transform: skewY(9.3deg) scaleY(2);
+
 }
 
 .button-57:hover span:last-child {
     transform: translateX(-50%) translateY(-100%);
     opacity: 1;
     transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+    font-family: 'Josefin Sans', sans-serif;
 }
