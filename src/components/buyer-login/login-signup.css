@@ -87,3 +87,9 @@
 .link-to-redirect:hover {
   color: #ff9d00;
 }
+.backend-response{
+  text-align: center;
+  color: red;
+  margin-bottom: 0px;
+  margin-top: 16px;
+}

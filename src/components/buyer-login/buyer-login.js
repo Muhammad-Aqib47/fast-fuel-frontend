@@ -23,10 +23,15 @@ const BuyerLoginForm = () => {
       });
       const data = await response.json();
       setApiResponse(data);
+      console.log(apiResponse)
       // const token = apiResponse.token
       const  token = data.token
-      console.log(token);
+      console.log(">>>>>>>>>>>",token);
       Cookies.set("token", token, { expires: 7 });
+
+      if (token){
+      window.location.replace("http://localhost:3000/welcome");
+      }
 
       
 
@@ -46,7 +51,6 @@ const BuyerLoginForm = () => {
       .email("Email must be a valid email")
       .required("Email cannot be blank."),
     password: Yup.string().required("Password is required"),
-    // .min(8, "Password must have at least 8 characters").matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]*$/, "Password must have at least one uppercase letter, one lowercase letter, and one digit")
   });
 
   return (
@@ -92,6 +96,8 @@ const BuyerLoginForm = () => {
                 {errors.password && touched.password ? (
                   <div className="error-meessage">{errors.password}</div>
                 ) : null}
+                {apiResponse && <p className="backend-response">{apiResponse.message}</p>}
+
 
                 <button
                   className="submit-buton"
@@ -100,7 +106,7 @@ const BuyerLoginForm = () => {
                 >
                   Login
                 </button>
-                {apiResponse && <p>{apiResponse.message}</p>}
+                {/* {apiResponse && <p>{apiResponse.message}</p>} */}
               </div>
             </Form>
           )}

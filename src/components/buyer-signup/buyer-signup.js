@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import "../buyer-login/login-signup.css";
 import { useState } from "react";
 
@@ -48,8 +48,7 @@ const BuyerSignUpForm = () => {
       .min(8, "Password must have at least 8 characters")
       .matches(
         /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-        "Password must have at least one uppercase letter, one lowercase letter, and one digit"
-      ),
+"Password must contains one uppercase letter, one lowercase letter, one digit, and one special character."),
   });
 
   return (
@@ -124,7 +123,8 @@ const BuyerSignUpForm = () => {
                 {errors.password && touched.password ? (
                   <div className="error-meessage">{errors.password}</div>
                 ) : null}
-                
+                 {apiResponse && <p className="backend-response">{apiResponse}</p>}
+
                 <button
                   className="submit-buton"
                   type="submit"
@@ -132,7 +132,6 @@ const BuyerSignUpForm = () => {
                 >
                   Sign Up
                 </button>
-                {apiResponse && <p>{apiResponse}</p>}
               </div>
             </Form>
           )}
