@@ -9,6 +9,7 @@ import OrderStatus from './components/buyer/order-status/index'
 function App() {
   return (
     <div>
+
       <Routes>
 
         <Route path='/' element={<BuyerForm />} />
