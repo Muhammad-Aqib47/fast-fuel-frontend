@@ -44,10 +44,10 @@ const BuyerSignUpForm = () => {
 
       .required("Phone cannot be blank."),
     password: Yup.string()
-      .required("Password is required")
+      .required("Password cannot be blank")
       .min(8, "Password must have at least 8 characters")
       .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]*$/,
+        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
         "Password must have at least one uppercase letter, one lowercase letter, and one digit"
       ),
   });

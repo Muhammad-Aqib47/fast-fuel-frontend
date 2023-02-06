@@ -3,12 +3,13 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import "./login-signup.css";
+import Cookies from 'js-cookie';
 import { useState } from "react";
 
 const BuyerLoginForm = () => {
   const [apiResponse, setApiResponse] = useState(null);
 
-  const handleSubmit = async (values, actions,e) => {
+  const handleSubmit = async (values, actions) => {
 
     console.log(">>>>>>>>>>>>>>>>>>>>", values);
 
@@ -21,8 +22,18 @@ const BuyerLoginForm = () => {
         body: JSON.stringify(values),
       });
       const data = await response.json();
-      console.log(".>>>><<<>>>>", data);
       setApiResponse(data);
+      // const token = apiResponse.token
+      const  token = data.token
+      console.log(token);
+      Cookies.set("token", token, { expires: 7 });
+
+      
+
+
+
+     
+     
     } catch (error) {
       console.error(error);
     } finally {
@@ -53,10 +64,6 @@ const BuyerLoginForm = () => {
           initialValues={{ email: "", password: "" }}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
-
-          // onSubmit={(values) => {
-          //   console.log(values);
-          // }}
         >
           {({ errors, touched, isSubmitting }) => (
             <Form>
