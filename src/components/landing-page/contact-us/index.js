@@ -2,39 +2,48 @@ import { useState } from 'react';
 import './style.css'
 
 function Contact() {
-    const [formData, setFormData] = useState({
+    const [submitForm, setSubmitForm] = useState({
         name: "",
-        email:"",
-        query:""
+        email: "",
+        query: ""
     })
-const allInputValues = {
-    name: formData.name,
-    email: formData.email,
-    query: formData.query
-}
-console.log(allInputValues)
-
-const createQuery = async (e)=>{
-    e.preventDefault();
-    try {
-        const response = await fetch('http://localhost:3001/api/users',{
-            method: 'POST',
-            headers: {'Content-Type': 'Application/json'},
-            body: JSON.stringify(allInputValues)
-        });
-        const data = await response.json()
-        console.log('Query is received', data)
-        alert("Your message has been received successfully.")
-    } catch (error) {
-        console.log(error)
+    // for current values that update by setSubmitForm
+    const inputValues = {
+        name: submitForm.name,
+        email: submitForm.email,
+        query: submitForm.query
     }
-}
+    console.log(inputValues)
 
 
-function inputHandler(e){
-    const{name, value} =e.target;
-    setFormData({...formData,[name]: value});
-}
+    // use POST method to submit form 
+    const createQuery = async (e) => {
+        e.preventDefault(); 
+        try {
+            const response = await fetch('http://localhost:3001/api/users', {
+                method: 'POST',
+                headers: { 'Content-Type': 'Application/json' },
+                body: JSON.stringify(inputValues)
+            });
+            const data = await response.json()
+            console.log('Query is received', data)
+            alert("Your message has been received successfully.")
+            setSubmitForm({
+                name: "",
+                email: "",
+                query: ""
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
+    function inputFormHandler(e) {
+        // destructure of name and value of input fields from e.target
+        const { name, value } = e.target;
+        setSubmitForm({ ...submitForm, [name]: value });
+    }
     return (
         <div className="container-fluid" id='section-5'>
             <h1 className='contact-heading'>Contact Us</h1>
@@ -64,15 +73,15 @@ function inputHandler(e){
                     <p>If you have any work from us or any types of quries related to our fast fuel delivery, you can send us message from here. It's our pleasure to help you.</p>
                     <form onSubmit={createQuery}>
                         <div className="input-box">
-                            <input type="text" placeholder="Enter your name" onChange={inputHandler} name='name' required value={formData.name}/>
+                            <input type="text" placeholder="Enter your name" onChange={inputFormHandler} name='name' required value={submitForm.name} />
                         </div>
                         <div className="input-box">
-                            <input type="text" placeholder="Enter your email" onChange={inputHandler} name='email' required value={formData.email}/>
+                            <input type="text" placeholder="Enter your email" onChange={inputFormHandler} name='email' required value={submitForm.email} />
                         </div>
                         <div className="input-box message-box">
-                             <textarea rows="9" cols="70"onChange={inputHandler} name='query' required value={formData.query}/>  
+                            <textarea rows="9" cols="70" onChange={inputFormHandler} name='query' required value={submitForm.query} />
                         </div>
-                            <button type='submit' className='submit-button'><span className='submit-button-span'>SUBMIT</span></button>
+                        <button type='submit' className='submit-button'><span className='submit-button-span'>SUBMIT</span></button>
                     </form>
                 </div>
             </div>

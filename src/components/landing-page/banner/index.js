@@ -20,10 +20,6 @@ function Banner() {
                     <h1 className='banner-heading'><span className='banner-heading-span'>On-Demand Fuel Delivery Service</span></h1>
                 </Slide>
             </ImageSlider>
-            {/* <div id='section-1'>
-                <img className='banner-img' src="./images/is.jpg" alt="Banner"/>
-                <h1 className='banner-heading'><span className='banner-heading-span'>On-Demand Fuel Delivery Service</span></h1>
-            </div> */}
         </div>
     );
 }
