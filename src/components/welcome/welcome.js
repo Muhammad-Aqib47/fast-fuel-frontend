@@ -4,7 +4,7 @@ import { useState,useEffect } from "react";
 function Welcome() {
   const [data, setData] = useState("");
 
-  const token = Cookies.get("token");
+  const token = Cookies.get("buyerToken");
   const getBuyerDetails = async() =>{
     try {
       const response = await fetch("http://localhost:3002/api/buyers/validatebuyer", {
@@ -13,7 +13,9 @@ function Welcome() {
         },
       })
       const responseData =await response.json()
-
+      if(!token){
+        window.location.replace("http://localhost:3000/buyerlogin");
+      }
 
       setData(responseData)
     } catch (error) {
@@ -26,7 +28,7 @@ function Welcome() {
   },[])
 
   return<>
-     <div>Welcome</div>;
+     <div>Welcome</div>
   <p>Buyer id ={data.buyer_id}</p>
   <p>Buyer Name ={data.buyer_name}</p>
   <p>Buyer emai ={data.buyer_email}</p>

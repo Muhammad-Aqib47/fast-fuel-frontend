@@ -1,9 +1,14 @@
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import BuyerLoginForm from './components/buyer-login/buyer-login';
 import BuyerSignUpForm from './components/buyer-signup/buyer-signup';
 import SellerLoginForm from './components/seller-login/seller-login';
 import SellerSignUpForm from './components/seller-signup/seller-signup'; 
 import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import BuyerForm from './components/buyer';
+import OrderStatus from './components/buyer/order-status/index'
 import Welcome from './components/welcome/welcome';
 
 function App() {
@@ -15,6 +20,8 @@ function App() {
           <Route path="/buyerlogin" element={<BuyerLoginForm />} />
           <Route path="/buyersignup" element={<BuyerSignUpForm />} />
           <Route path='/welcome' element={<Welcome/>} />
+        <Route path='/' element={<BuyerForm />} />
+        <Route path='/order-status' element={<OrderStatus />} />
 
        </Routes>
     </>

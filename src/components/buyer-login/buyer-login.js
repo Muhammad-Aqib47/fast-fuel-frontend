@@ -22,14 +22,11 @@ const BuyerLoginForm = () => {
         body: JSON.stringify(values),
       });
       const data = await response.json();
+      console.log(data)
       setApiResponse(data);
-      console.log(apiResponse)
-      // const token = apiResponse.token
       const  token = data.token
-      console.log(">>>>>>>>>>>",token);
-      Cookies.set("token", token, { expires: 7 });
-
-      if (token){
+      Cookies.set("buyerToken", token, { expires: 7 });
+      if (token ||data.message === "Succesfuly logged in"){
       window.location.replace("http://localhost:3000/welcome");
       }
 
