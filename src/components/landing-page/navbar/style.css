@@ -33,7 +33,7 @@
   background-color: #444;
 }
 
-.nav-right .button {
+.nav-right .button-1 {
   background-color: #00b0ff;
   border-radius: 2px;
   border: none;
@@ -43,21 +43,21 @@
   cursor: pointer;
 }
 
-.nav-right .button:hover {
+.nav-right .button-1:hover {
   background-color: #ff9d00;
   color: white;
   font-size: 15px;
 
 }
 
-.nav-right .button .span {
+.nav-right .button-1 .span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.nav-right .button .span:after {
+.nav-right .button-1 .span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -67,11 +67,11 @@
   width: 27px;
 }
 
-.nav-right .button:hover .span {
+.nav-right .button-1:hover .span {
   padding-right: 25px;
 }
 
-.nav-right .button:hover .span:after {
+.nav-right .button-1:hover .span:after {
   opacity: 1;
   right: 0;
 }

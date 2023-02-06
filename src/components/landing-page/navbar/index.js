@@ -15,8 +15,8 @@ function Navbar() {
           <a className='anchor' href="#section-5">Contact Us</a>
         </div>
         <div className="nav-right">
-          <button className='button'><span className='span'>Seller</span></button>
-          <button className='button'><span className='span'>Buyer</span></button>
+          <button className='button-1'><span className='span'>Seller</span></button>
+          <button className='button-1'><span className='span'>Buyer</span></button>
         </div>
       </nav>
     </div>
