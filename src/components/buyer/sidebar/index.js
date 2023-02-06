@@ -17,7 +17,7 @@ function SideBar() {
             </div>
 
             <ul>
-                <Link to="/" className="link"><li className='lists'><i className="fa-solid fa-gas-pump" style={{ marginRight: "7px" }}></i>Order Your Fuel</li> </Link>
+                <Link to="/form" className="link"><li className='lists'><i className="fa-solid fa-gas-pump" style={{ marginRight: "7px" }}></i>Order Your Fuel</li> </Link>
                 <Link to="/order-status" className="link"><li className='lists'><i className="fa-solid fa-file-lines" style={{ marginRight: "7px" }}></i>Order Status</li> </Link>
                 <Link to="/landing-page" className="link"><li className='lists'><i className="fa-solid fa-circle-arrow-left" style={{ marginRight: "7px" }}></i>LogOut</li> </Link>
             </ul>

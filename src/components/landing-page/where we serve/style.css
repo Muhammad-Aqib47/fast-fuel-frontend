@@ -1,0 +1,14 @@
+.heading-serve-area{
+    font-family: Georgia, serif;
+    text-align: center;
+    font-size: 40px;
+}
+.para-serve-area{
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+.img-serve-area{
+    height: 550px;
+    width: 100%;
+}
