@@ -31,9 +31,22 @@ function Form() {
 
     }
 
+    const allInputValues = {
+        name: formData.name,
+        selectCity: formData.selectCity,
+        selectSeller: formData.selectSeller,
+        selectFueltype: formData.selectFueltype,
+        fuelPrice: formData.fuelPrice,
+        fuelQuantity: formData.fuelQuantity,
+        fuelDeliveryAddress: formData.fuelDeliveryAddress,
+        phoneNumber: formData.phoneNumber,
+        selectPaymentMethod: formData.selectPaymentMethod,
+    }
+    console.log(allInputValues)
+
+    //---------for submit order------------------//
     const createOrder = async (event) => {
         event.preventDefault();
-
 
         //---------------sweet alert------------------------------------//
         Swal.fire({
@@ -70,7 +83,7 @@ function Form() {
                     } catch (error) {
                         console.log(error);
                     }
-                    //-----after submit form all fields to be empty
+                    //-----after submit form all fields to be empty------//
                 }).then(() => {
                     setFormData({
                         name: "",
@@ -89,18 +102,6 @@ function Form() {
         })
         //---------------------<><><><><><>><>----------------------------//
 
-        const allInputValues = {
-            name: formData.name,
-            selectCity: formData.selectCity,
-            selectSeller: formData.selectSeller,
-            selectFueltype: formData.selectFueltype,
-            fuelPrice: formData.fuelPrice,
-            fuelQuantity: formData.fuelQuantity,
-            fuelDeliveryAddress: formData.fuelDeliveryAddress,
-            phoneNumber: formData.phoneNumber,
-            selectPaymentMethod: formData.selectPaymentMethod,
-        }
-        console.log(allInputValues)
 
 
     }
@@ -110,14 +111,16 @@ function Form() {
 
     useEffect(() => {
 
-        //------------------------------------Filter out city data----------------------//
+        //------------------------------------get cities data----------------------//
         const getCitiesData = async () => {
             try {
                 const response = await fetch('http://localhost:3001/api/buyers/getCities')
                 const data = await response.json()
 
-                /// remove dublicate value in array of cities
+                //------convert data of array in to single data array
                 let cityNames = data.map(city => city.seller_city);
+
+                /// remove dublicate cities in array of cities
                 let uniqueCities = cityNames.filter((city, index) => cityNames.indexOf(city) === index);
                 //------------------->>-------------------------------------<<---------//
 
@@ -167,7 +170,7 @@ function Form() {
                 const response = await fetch(`http://localhost:3001/api/buyers/getFuelPrice/${formData.selectFueltype}`)
                 const data = await response.json()
 
-                //----------------Remove dublicate values in array
+                //----------------Remove dublicate prices values in array
                 const isDuplicate = (item, index, array) => index === array.findIndex(
                     (obj) => obj.p1 === item.p1 // compare properties
                 )

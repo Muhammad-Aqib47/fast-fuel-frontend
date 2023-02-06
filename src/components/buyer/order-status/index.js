@@ -84,13 +84,13 @@ function OrderStatus(id) {
                         <table className="table">
                             <thead className={ordersData.length > 0 ? '' : 'hidden'}>
                                 <tr>
-                                    <th>Order_id</th>
+                                    <th>Order Status</th>
                                     <th>Your Name</th>
                                     <th>City</th>
                                     <th>Fuel Station</th>
                                     <th>Fuel Type</th>
                                     <th>Fuel Price/per Liter</th>
-                                    <th>Quantity</th>
+                                    <th>Quantity/liter</th>
                                     <th>Delivery address</th>
                                     <th>Phone Number</th>
                                     <th>Payment Mode</th>
@@ -102,7 +102,7 @@ function OrderStatus(id) {
 
                                     return <tr key={index}>
                                         {/* <td>{Math.floor(Math.random() * 90000) + 10000}</td> */}
-                                        <td>{order.order_id}</td>
+                                        <td>Order pending</td>
                                         <td>{order.b_name}</td>
                                         <td>{order.city}</td>
                                         <td>{order.fuel_station}</td>
