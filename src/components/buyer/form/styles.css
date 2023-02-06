@@ -9,7 +9,7 @@
   }
 }
 
-.form {
+.order-form {
   margin-top: 45px;
   position: fixed;
   width: 85%;
@@ -39,14 +39,14 @@
   color: red;
 }
 
-.form-label {
+.order-form-label {
   display: block;
   margin-left: 20px;
   padding-top: 17px;
 
 }
 
-.form-label>span {
+.order-form-label>span {
   float: left;
   width: 20%;
   margin-top: 12px;

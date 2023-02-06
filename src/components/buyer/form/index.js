@@ -195,14 +195,14 @@ function Form() {
                     <h2 className='header'> Order your Fuel </h2>
                 </div>
 
-                <form onSubmit={createOrder} className="form">
-                    <label className='form-label'>
+                <form onSubmit={createOrder} className="order-form">
+                    <label className='order-form-label'>
                         <span> Name <span className="required"> * </span></span>
                         <input onChange={inputHandler} type="text" value={formData.name} name="name" placeholder='Enter you name' required />
                     </label>
 
 
-                    <label className='form-label'>
+                    <label className='order-form-label'>
                         <span>City <span className="required">*</span></span>
                         <select className='select' onChange={inputHandler} value={formData.selectCity} name="selectCity" >
                             <option> Choose City... </option>
@@ -211,7 +211,7 @@ function Form() {
                     </label>
 
 
-                    <label className='form-label'>
+                    <label className='order-form-label'>
                         <span>Seller Fuel Station <span className="required">*</span></span>
                         <select className='select' onChange={inputHandler} value={formData.selectSeller} name="selectSeller">
                             <option> Choose Fuel Station... </option>
@@ -220,7 +220,7 @@ function Form() {
                     </label>
 
 
-                    <label className='form-label'>
+                    <label className='order-form-label'>
                         <span>Fuel Type <span className="required">*</span></span>
                         <select className='select' onChange={inputHandler} value={formData.selectFueltype} name="selectFueltype">
                             <option>Choose Fuel Type... </option>
@@ -229,7 +229,7 @@ function Form() {
                     </label>
 
 
-                    <label className='form-label'>
+                    <label className='order-form-label'>
                         <span> Fuel Price /<span className='liter'>liter</span> </span>
                         <select className='select-price' onChange={inputHandler} value={formData.fuelPrice} name="fuelPrice">
                             <option>Please select fuel price......</option>
@@ -238,25 +238,25 @@ function Form() {
                     </label>
 
 
-                    <label className='form-label'>
+                    <label className='order-form-label'>
                         <span> Fuel Quantity / <span className='liter'>liter</span><span className="required">*</span> </span>
                         <input type="number" onChange={inputHandler} value={formData.fuelQuantity} name="fuelQuantity" placeholder='Enter quantity of fuel' required />
                     </label>
 
 
-                    <label className='form-label'>
+                    <label className='order-form-label'>
                         <span> Fuel Delivery Address <span className="required">*</span></span>
                         <input type="text" onChange={inputHandler} value={formData.fuelDeliveryAddress} name="fuelDeliveryAddress" required />
                     </label>
 
 
-                    <label className='form-label'>
+                    <label className='order-form-label'>
                         <span> Phone Number <span className="required">*</span></span>
                         <input type="number" onChange={inputHandler} value={formData.phoneNumber} name="phoneNumber" required />
                     </label>
 
 
-                    <label className='form-label'>
+                    <label className='order-form-label'>
                         <span> Payment Mode <span className="required">*</span></span>
                         <select className='select' onChange={inputHandler} value={formData.selectPaymentMethod} name="selectPaymentMethod">
                             <option> Select a payment method... </option>
