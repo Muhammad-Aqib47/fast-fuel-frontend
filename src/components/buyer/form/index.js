@@ -8,6 +8,7 @@ function Form() {
     const [fuelTypes, setFuelTypes] = useState([])
     const [fuelPrice, setFuelPrice] = useState([])
 
+
     const [formData, setFormData] = useState({
 
         name: "",
@@ -27,8 +28,6 @@ function Form() {
 
         let { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-
-
     }
 
     const allInputValues = {
