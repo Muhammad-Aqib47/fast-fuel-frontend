@@ -22,8 +22,8 @@ function ServicesCard() {
 
     return (
         <>
-        <div style = {{display : "flex", backgroundColor: "aliceblue"}}>
-            <h4 className="services">Our Services</h4>
+        <div className="services-card">
+            <h4 className="services-heading">Our Services</h4>
             {cardDatas.map((cardData) => {
                 return <Cards title = {cardData.title}  desc = {cardData.desc} img = {cardData.img} />
             })}
