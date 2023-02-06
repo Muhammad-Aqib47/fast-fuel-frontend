@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../buyer-login/login-signup.css";
 import { useState } from "react";
 
