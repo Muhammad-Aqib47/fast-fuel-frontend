@@ -27,7 +27,7 @@ const BuyerLoginForm = () => {
       const token = data.token
       Cookies.set("buyerToken", token, { expires: 7 });
       if (token || data.message === "Succesfuly logged in") {
-        window.location.replace("http://localhost:3000/welcome");
+        window.location.replace("http://localhost:3000/form");
       }
 
 

@@ -18,7 +18,7 @@ function App() {
       <Route path="/sellerlogin" element={<SellerLoginForm />} />
       <Route path="/sellersignup" element={<SellerSignUpForm />} />
       <Route path="/buyerlogin" element={<BuyerLoginForm />} />
-      <Route path="/buyersignup" element={<BuyerSignUpForm />} /> <Route path='/welcome' element={<Welcome />} />
+      <Route path="/buyersignup" element={<BuyerSignUpForm />} />
       <Route path='/form' element={<BuyerForm />} />
       <Route path='/order-status' element={<OrderStatus />} />
       <Route path='*' element={<Error />} />
