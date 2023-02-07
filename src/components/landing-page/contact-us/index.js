@@ -18,7 +18,7 @@ function Contact() {
 
     // use POST method to submit form 
     const createQuery = async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         try {
             const response = await fetch('http://localhost:3001/api/users', {
                 method: 'POST',
@@ -81,7 +81,7 @@ function Contact() {
                         <div className="input-box message-box">
                             <textarea rows="9" cols="70" onChange={inputFormHandler} name='query' required value={submitForm.query} />
                         </div>
-                        <button type='submit' className='submit-button'><span className='submit-button-span'>SUBMIT</span></button>
+                        <button type='submit' className='submit-button'><span className='submit-button-span'>Submit</span></button>
                     </form>
                 </div>
             </div>

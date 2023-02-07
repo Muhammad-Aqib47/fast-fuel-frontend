@@ -14,7 +14,7 @@ const BuyerLoginForm = () => {
     console.log(">>>>>>>>>>>>>>>>>>>>", values);
 
     try {
-      const response = await fetch("http://localhost:3002/api/buyers/login", {
+      const response = await fetch("http://localhost:3001/api/buyers/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -24,18 +24,18 @@ const BuyerLoginForm = () => {
       const data = await response.json();
       console.log(data)
       setApiResponse(data);
-      const  token = data.token
+      const token = data.token
       Cookies.set("buyerToken", token, { expires: 7 });
-      if (token ||data.message === "Succesfuly logged in"){
-      window.location.replace("http://localhost:3000/welcome");
+      if (token || data.message === "Succesfuly logged in") {
+        window.location.replace("http://localhost:3000/welcome");
       }
 
-      
 
 
 
-     
-     
+
+
+
     } catch (error) {
       console.error(error);
     } finally {

@@ -13,7 +13,7 @@ const SellerLoginForm = () => {
     console.log(">>>>>>>>>>>>>>>>>>>>", values);
 
     try {
-      const response = await fetch("http://localhost:3002/api/sellers/login", {
+      const response = await fetch("http://localhost:3001/api/sellers/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -52,13 +52,7 @@ const SellerLoginForm = () => {
         <Formik
           initialValues={{ email: "", password: "" }}
           validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-          // onSubmit={(values, actions) => {
-          //   // handle form submission
-          //   console.log(values);
-          //   //you can make api call here to save the form data.
-          // }}
-        >
+          onSubmit={handleSubmit} >
           {({ errors, touched, isSubmitting }) => (
             <Form>
               <div className="form">

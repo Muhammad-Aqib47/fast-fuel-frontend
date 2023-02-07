@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import LandingPage from './components/landing-page';
+import LandingPage from './components/landing-page/landing-page';
 import React from 'react';
 import BuyerLoginForm from './components/buyer-login/buyer-login';
 import SellerSignUpForm from './components/seller-signup/seller-signup';
@@ -12,15 +12,15 @@ import Welcome from './components/welcome/welcome';
 
 function App() {
   return (
-      <Routes>
-        <Route path='/' element={<LandingPage />} />
-<Route path="/sellerlogin" element={<SellerLoginForm/>} />
-<Route path="/sellersignup" element={<SellerSignUpForm />} />
-<Route path="/buyerlogin" element={<BuyerLoginForm />} />
-<Route path="/buyersignup" element={<BuyerSignUpForm />} /> <Route path='/welcome' element={<Welcome/>} />
-<Route path='/form' element={<BuyerForm />} />
-<Route path='/order-status' element={<OrderStatus />} />
-</Routes>
+    <Routes>
+      <Route path='/' element={<LandingPage />} />
+      <Route path="/sellerlogin" element={<SellerLoginForm />} />
+      <Route path="/sellersignup" element={<SellerSignUpForm />} />
+      <Route path="/buyerlogin" element={<BuyerLoginForm />} />
+      <Route path="/buyersignup" element={<BuyerSignUpForm />} /> <Route path='/welcome' element={<Welcome />} />
+      <Route path='/form' element={<BuyerForm />} />
+      <Route path='/order-status' element={<OrderStatus />} />
+    </Routes>
   );
 }
 

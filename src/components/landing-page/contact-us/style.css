@@ -1,18 +1,16 @@
 /* Google Font CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-/* .banner-heading {
-    color: black;
-    text-align: center;
-    font-family: Georgia, serif;
-    font-size: 50px;
-} */
-.contact-heading{
+
+.contact-heading {
     color: black;
     font-family: Georgia, serif;
     text-align: center;
     font-size: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+
 }
+
 .container-fluid {
     margin-left: 50px;
     width: 85%;
@@ -20,6 +18,8 @@
     border-radius: 6px;
     padding: 20px 60px 30px 40px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Josefin Sans', sans-serif;
+
 }
 
 .container-fluid .content {
@@ -111,31 +111,35 @@
 }
 
 .submit-button {
-    border-radius: 10px;
+    background-color: #00b0ff;
+    border-radius: 2px;
     border: none;
     width: 80px;
     height: 30px;
     margin: 0px 5px 0px 5px;
     cursor: pointer;
-    background: #00b0ff;
-    color: white;
-  }
-  
-  .submit-button:hover {
+    font-family: 'Josefin Sans', sans-serif;
+
+
+}
+
+.submit-button:hover {
     background-color: #ff9d00;
     color: white;
     font-size: 15px;
-  
-  }
-  
-  .submit-button .submit-button-span {
+    font-family: 'Josefin Sans', sans-serif;
+
+
+}
+
+.submit-button .submit-button-span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
-  }
-  
-  .submit-button .submit-button-span:after {
+}
+
+.submit-button .submit-button-span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -143,18 +147,18 @@
     right: -20px;
     transition: 0.5s;
     width: 27px;
-  }
-  
-  .submit-button:hover .submit-button-span {
+}
+
+.submit-button:hover .submit-button-span {
     padding-right: 25px;
-  }
-  
-   .submit-button:hover .submit-button-span:after {
+}
+
+.submit-button:hover .submit-button-span:after {
     opacity: 1;
     right: 0;
-  }
-  
-  
+}
+
+
 
 @media (max-width: 950px) {
     .container-fluid {

@@ -7,12 +7,12 @@ import { useState } from "react";
 
 const SellerSignUpForm = () => {
   const [apiResponse, setApiResponse] = useState(null);
-  // console.log(">>>>>>>>>>>>>>>>>>>>",values)
+
   const handleSubmit = async (values, actions) => {
     console.log(">>>>>>>>>>>>>>>>>>>>", values);
 
     try {
-      const response = await fetch("http://localhost:3002/api/sellers/signup", {
+      const response = await fetch("http://localhost:3001/api/sellers/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,14 +72,14 @@ const SellerSignUpForm = () => {
           initialValues={{ email: "", name: "", phone: "", password: "" }}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
-          // onSubmit={(values, actions) => {
-          //   // handle form submission
-          //   console.log(values);
-          //   actions = "/sellerlogin"
-          //   // redirect();
+        // onSubmit={(values, actions) => {
+        //   // handle form submission
+        //   console.log(values);
+        //   actions = "/sellerlogin"
+        //   // redirect();
 
-          //   //you can make api call here to save the form data.
-          // }}
+        //   //you can make api call here to save the form data.
+        // }}
         >
           {({ errors, touched, isSubmitting }) => (
             <Form>

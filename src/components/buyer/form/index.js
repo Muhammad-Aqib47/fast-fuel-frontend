@@ -41,7 +41,7 @@ function Form() {
         phoneNumber: formData.phoneNumber,
         selectPaymentMethod: formData.selectPaymentMethod,
     }
-    console.log(allInputValues)
+
 
     //---------for submit order------------------//
     const createOrder = async (event) => {

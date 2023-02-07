@@ -7,12 +7,12 @@ import { useState } from "react";
 
 const BuyerSignUpForm = () => {
   const [apiResponse, setApiResponse] = useState(null);
-  // console.log(">>>>>>>>>>>>>>>>>>>>",values)
+
   const handleSubmit = async (values, actions) => {
     console.log(">>>>>>>>>>>>>>>>>>>>", values);
 
     try {
-      const response = await fetch("http://localhost:3002/api/buyers/signup", {
+      const response = await fetch("http://localhost:3001/api/buyers/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const BuyerSignUpForm = () => {
       .min(8, "Password must have at least 8 characters")
       .matches(
         /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-"Password must contains one uppercase letter, one lowercase letter, one digit, and one special character."),
+        "Password must contains one uppercase letter, one lowercase letter, one digit, and one special character."),
   });
 
   return (
@@ -65,13 +65,7 @@ const BuyerSignUpForm = () => {
         <Formik
           initialValues={{ email: "", name: "", phone: "", password: "" }}
           validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-          // onSubmit={(values, acti) => {
-          //   // handle form submission
-          //   // console.log(values);
-          //   //you can make api call here to save the form data.
-          // }}
-        >
+          onSubmit={handleSubmit} >
           {({ errors, touched, isSubmitting }) => (
             <Form>
               <div className="form">
@@ -123,7 +117,7 @@ const BuyerSignUpForm = () => {
                 {errors.password && touched.password ? (
                   <div className="error-meessage">{errors.password}</div>
                 ) : null}
-                 {apiResponse && <p className="backend-response">{apiResponse}</p>}
+                {apiResponse && <p className="backend-response">{apiResponse}</p>}
 
                 <button
                   className="submit-buton"
