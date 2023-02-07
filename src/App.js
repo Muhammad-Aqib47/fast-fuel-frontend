@@ -9,6 +9,7 @@ import SellerLoginForm from './components/seller-login/seller-login';
 import BuyerForm from './components/buyer';
 import OrderStatus from './components/buyer/order-status/index'
 import Welcome from './components/welcome/welcome';
+import Error from './pages';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/buyersignup" element={<BuyerSignUpForm />} /> <Route path='/welcome' element={<Welcome />} />
       <Route path='/form' element={<BuyerForm />} />
       <Route path='/order-status' element={<OrderStatus />} />
+      <Route path='*' element={<Error />} />
     </Routes>
   );
 }
