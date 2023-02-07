@@ -1,6 +1,6 @@
-import Form from './form';
-import SideBar from './sidebar';
-import './sidebar/style.css'
+import Form from '../form';
+import SideBar from '../sidebar';
+import '../sidebar/style.css'
 
 function BuyerForm() {
     return (
