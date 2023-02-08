@@ -101,8 +101,7 @@ function OrderStatus(id) {
                                 {ordersData.map((order, index) => {
 
                                     return <tr key={index}>
-                                        {/* <td>{Math.floor(Math.random() * 90000) + 10000}</td> */}
-                                        <td>Order pending</td>
+                                        <td>{order.order_status}</td>
                                         <td>{order.b_name}</td>
                                         <td>{order.city}</td>
                                         <td>{order.fuel_station}</td>

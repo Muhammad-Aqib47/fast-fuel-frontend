@@ -132,7 +132,7 @@ const BuyerSignUpForm = () => {
         </Formik>
         <p className="text-before-link">
           Already have an account?{" "}
-          <Link className="link-to-redirect" to="/buyerlogin">
+          <Link className="link-to-redirect" to="/buyer_login">
             Login
           </Link>
         </p>

@@ -11,8 +11,6 @@ const BuyerLoginForm = () => {
 
   const handleSubmit = async (values, actions) => {
 
-    console.log(">>>>>>>>>>>>>>>>>>>>", values);
-
     try {
       const response = await fetch("http://localhost:3001/api/buyers/login", {
         method: "POST",
@@ -22,17 +20,12 @@ const BuyerLoginForm = () => {
         body: JSON.stringify(values),
       });
       const data = await response.json();
-      console.log(data)
       setApiResponse(data);
       const token = data.token
       Cookies.set("buyerToken", token, { expires: 7 });
       if (token || data.message === "Succesfuly logged in") {
-        window.location.replace("http://localhost:3000/form");
+        window.location.replace("http://localhost:3000/buyer_form");
       }
-
-
-
-
 
 
 
@@ -110,7 +103,7 @@ const BuyerLoginForm = () => {
         </Formik>
         <p className="text-before-link">
           Don't have account?{" "}
-          <Link className="link-to-redirect" to="/buyersignup">
+          <Link className="link-to-redirect" to="/buyer_signup">
             Signup
           </Link>
         </p>

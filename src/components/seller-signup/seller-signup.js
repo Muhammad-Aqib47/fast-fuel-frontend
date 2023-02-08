@@ -147,7 +147,7 @@ const SellerSignUpForm = () => {
         </Formik>
         <p className="text-before-link">
           Already have an account?
-          <Link className="link-to-redirect" to="/sellerlogin">
+          <Link className="link-to-redirect" to="/seller_login">
             Login
           </Link>
         </p>
