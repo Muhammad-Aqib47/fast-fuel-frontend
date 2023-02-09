@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './styles.css'
+import './form-styles.css'
 import Swal from 'sweetalert2';
 
 function Form() {

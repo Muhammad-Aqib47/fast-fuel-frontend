@@ -41,15 +41,15 @@ function Profile() {
 
                 <div className="order-form">
                     <label className='order-form-label'>
-                        <h2> Name : <span className="required"> {buyerData.buyer_name} </span></h2>
+                        <h2> Name : <span className="name-span"> {buyerData.buyer_name} </span></h2>
                     </label> <br />
 
                     <label className='order-form-label'>
-                        <h2> Email : <span className="required"> {buyerData.buyer_email} </span></h2>
+                        <h2> Email : <span className="name-span"> {buyerData.buyer_email} </span></h2>
                     </label><br />
 
                     <label className='order-form-label'>
-                        <h2> Phone : <span className="required"> {buyerData.buyer_phone} </span></h2>
+                        <h2> Phone : <span className="name-span"> {buyerData.buyer_phone} </span></h2>
                     </label><br />
 
                 </div>
