@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './order-styles.css'
 
 function Orders() {
     const [ordersData, setOrdersData] = useState([])
@@ -13,6 +14,29 @@ function Orders() {
         } catch (error) {
             console.log(error);
         }
+    }
+
+    //update order data from buyers
+    const updateOrderData = async (id) => {
+        try {
+            const response = await fetch(`http://localhost:3001/api/orders/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    order_status: "Confirm"
+                })
+
+            }).then(() => window.location.reload())
+            const data = await response.json()
+            console.log('data is here', data)
+
+        } catch (error) {
+
+        }
+
     }
 
     useEffect(() => {
@@ -32,7 +56,7 @@ function Orders() {
                         <thead className={ordersData.length > 0 ? '' : 'hidden'}>
                             <tr>
                                 <th>Order Status</th>
-                                <th>Your Name</th>
+                                <th>Buyer Name</th>
                                 <th>City</th>
                                 <th>Fuel Station</th>
                                 <th>Fuel Type</th>
@@ -48,7 +72,7 @@ function Orders() {
                             {ordersData.map((order, index) => {
 
                                 return <tr key={index}>
-                                    <td>{order.order_status}</td>
+                                    <td style={{ color: 'blue' }}>{order.order_status}</td>
                                     <td>{order.b_name}</td>
                                     <td>{order.city}</td>
                                     <td>{order.fuel_station}</td>
@@ -58,8 +82,7 @@ function Orders() {
                                     <td>{order.fuel_delivery_address}</td>
                                     <td>{order.b_phone_number}</td>
                                     <td>{order.payment_mode}</td>
-                                    <td><button className="button-57" ><span className="button-57-text"><i className="fa-solid fa-trash"></i></span><span>Cancel Order</span></button></td>
-                                    {/* <td><button onClick={() => cancelOrder(order.order_id)} className="button-57" ><span className="button-57-text"><i className="fa-solid fa-trash"></i></span><span>Cancel Order</span></button></td> */}
+                                    <td><button className="button-58" onClick={() => updateOrderData(order.order_id)}><span className="button-57-text"><i className="fa-solid fa-circle-check"></i></span><span>Confirm</span></button></td>
                                 </tr>
                             })}
                         </tbody>

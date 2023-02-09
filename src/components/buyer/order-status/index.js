@@ -102,7 +102,7 @@ function OrderStatus(id) {
                                 {ordersData.map((order, index) => {
 
                                     return <tr key={index}>
-                                        <td>{order.order_status}</td>
+                                        <td style={{ color: 'blue' }}>{order.order_status}</td>
                                         <td>{order.b_name}</td>
                                         <td>{order.city}</td>
                                         <td>{order.fuel_station}</td>
