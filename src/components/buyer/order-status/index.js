@@ -1,6 +1,6 @@
 import SideBar from "../sidebar";
 import '../sidebar/style.css'
-import '../form/styles.css'
+import '../form/form-styles.css'
 import './styles.css'
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";

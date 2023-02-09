@@ -5,7 +5,7 @@ import ImageSlider, { Slide } from 'react-auto-image-slider';
 function Banner() {
     return (
         <div style={{ position: 'static' }}>
-            <ImageSlider effectDelay={1500} autoPlayDelay={2000}>
+            <ImageSlider effectDelay={500} autoPlayDelay={2000}>
                 <Slide>
                     <img alt="img2" src="./images/fuel.jpg" id='slider-img' />
                     <h1 className='banner-heading'><span className='banner-heading-span'>On-Demand Fuel Delivery Service</span></h1>
