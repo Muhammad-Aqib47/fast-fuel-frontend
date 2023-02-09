@@ -9,6 +9,7 @@ import SellerLoginForm from './components/seller-login/seller-login';
 import BuyerForm from './components/buyer/fullForm/index';
 import OrderStatus from './components/buyer/order-status/index'
 import Error from './pages/404';
+import SellerDashboard from './components/seller/seller';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path='/buyer_Form' element={<BuyerForm />} />
       <Route path='/order_status' element={<OrderStatus />} />
       <Route path='*' element={<Error />} />
+      <Route path='/seller_buyer_orders' element={<SellerDashboard />} />
     </Routes>
   );
 }

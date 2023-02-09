@@ -17,6 +17,7 @@ function OrderStatus(id) {
             const response = await fetch('http://localhost:3001/api/orders/getBuyerOrderStatus')
             const data = await response.json()
             setOrdersData(data)
+            console.log("order status", data)
         } catch (error) {
             console.log(error);
         }
