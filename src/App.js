@@ -9,6 +9,8 @@ import SellerLoginForm from './components/seller-login/seller-login';
 import BuyerForm from './components/buyer/fullForm/index';
 import OrderStatus from './components/buyer/order-status/index'
 import Error from './pages/404';
+import SellerDashboard from './components/seller/seller';
+import Profile from './components/buyer/profile';
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
       <Route path="/seller_signup" element={<SellerSignUpForm />} />
       <Route path="/buyer_login" element={<BuyerLoginForm />} />
       <Route path="/buyer_signup" element={<BuyerSignUpForm />} />
-      <Route path='/buyer_Form' element={<BuyerForm />} />
+      <Route path='/buyer_order_fuel' element={<BuyerForm />} />
       <Route path='/order_status' element={<OrderStatus />} />
+      <Route path='/buyer_profile' element={<Profile />} />
+      <Route path='/seller_buyer_orders' element={<SellerDashboard />} />
       <Route path='*' element={<Error />} />
     </Routes>
   );

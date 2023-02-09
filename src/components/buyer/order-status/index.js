@@ -17,6 +17,7 @@ function OrderStatus(id) {
             const response = await fetch('http://localhost:3001/api/orders/getBuyerOrderStatus')
             const data = await response.json()
             setOrdersData(data)
+            console.log("order status", data)
         } catch (error) {
             console.log(error);
         }
@@ -101,7 +102,7 @@ function OrderStatus(id) {
                                 {ordersData.map((order, index) => {
 
                                     return <tr key={index}>
-                                        <td>{order.order_status}</td>
+                                        <td style={{ color: 'blue' }}>{order.order_status}</td>
                                         <td>{order.b_name}</td>
                                         <td>{order.city}</td>
                                         <td>{order.fuel_station}</td>
