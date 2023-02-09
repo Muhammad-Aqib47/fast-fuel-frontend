@@ -2,9 +2,10 @@ import './style.css';
 
 function Footer() {
     return (
-        
+
         <footer>
-            <p>Copyright © 2023. All Rights Reserved</p>
+            <div style={{ display: 'inline-block', margin: '10px 20px' }}> <img src="./images/capture.png" alt="logo" className="logo" /><p>Copyright © 2023. All Rights Reserved</p></div>
+
         </footer>
 
     );
