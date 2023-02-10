@@ -8,7 +8,7 @@ function Orders() {
     // get orders from buyers
     const getOrdersData = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/orders/ordersData')
+            const response = await fetch('http://localhost:3001/api/sellers/ordersData')
             const data = await response.json()
             setOrdersData(data)
         } catch (error) {
@@ -19,7 +19,7 @@ function Orders() {
     //update order data from buyers
     const updateOrderData = async (id) => {
         try {
-            const response = await fetch(`http://localhost:3001/api/orders/${id}`, {
+            const response = await fetch(`http://localhost:3001/api/sellers/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Accept': 'application/json',

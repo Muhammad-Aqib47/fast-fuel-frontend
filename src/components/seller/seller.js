@@ -2,7 +2,7 @@ import React from 'react'
 import Orders from './orders'
 import SellerSideBar from './side-bar'
 
-function SellerDashboard() {
+function SellerDashBoard() {
     return (
         <div>
             <SellerSideBar />
@@ -11,4 +11,4 @@ function SellerDashboard() {
     )
 }
 
-export default SellerDashboard
+export default SellerDashBoard

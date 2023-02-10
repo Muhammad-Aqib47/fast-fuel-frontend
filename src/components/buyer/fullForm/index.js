@@ -2,7 +2,7 @@ import Form from '../form';
 import SideBar from '../sidebar';
 import '../sidebar/style.css'
 
-function BuyerForm() {
+function BuyerDashBoard() {
     return (
         <div>
 
@@ -13,4 +13,4 @@ function BuyerForm() {
         </div>
     );
 }
-export default BuyerForm;
+export default BuyerDashBoard;

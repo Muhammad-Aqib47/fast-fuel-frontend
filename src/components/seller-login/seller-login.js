@@ -25,7 +25,7 @@ const SellerLoginForm = () => {
       const token = data.token
       Cookies.set("sellerToken", token, { expires: 7 });
       if (token || data.message === "Succesfuly logged in") {
-        window.location.replace("http://localhost:3000/seller_details");
+        window.location.replace("http://localhost:3000/seller_buyer_orders");
       }
     } catch (error) {
       console.error(error);
