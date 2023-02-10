@@ -11,10 +11,13 @@ import OrderStatus from './components/buyer/order-status/index'
 import Error from './pages/404';
 import SellerDashboard from './components/seller/seller';
 import Profile from './components/buyer/profile';
+import Welcome from './components/seller-Details/sellerDetails';
+import SellerDetails from './components/seller-Details/sellerDetails';
 
 function App() {
   return (
     <Routes>
+      <Route path="/seller_details" element={<SellerDetails/>}/>
       <Route path='/' element={<LandingPage />} />
       <Route path="/seller_login" element={<SellerLoginForm />} />
       <Route path="/seller_signup" element={<SellerSignUpForm />} />

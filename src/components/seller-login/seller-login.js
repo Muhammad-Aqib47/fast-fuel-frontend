@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import Cookies from 'js-cookie';
 import "../buyer-login/login-signup.css";
 import { useState } from "react";
 
@@ -10,7 +11,6 @@ const SellerLoginForm = () => {
 
 
   const handleSubmit = async (values, actions) => {
-    console.log(">>>>>>>>>>>>>>>>>>>>", values);
 
     try {
       const response = await fetch("http://localhost:3001/api/sellers/login", {
@@ -21,8 +21,12 @@ const SellerLoginForm = () => {
         body: JSON.stringify(values),
       });
       const data = await response.json();
-      console.log(".>>>><<<>>>>", data);
       setApiResponse(data);
+      const token = data.token
+      Cookies.set("sellerToken", token, { expires: 7 });
+      if (token || data.message === "Succesfuly logged in") {
+        window.location.replace("http://localhost:3000/seller_details");
+      }
     } catch (error) {
       console.error(error);
     } finally {
@@ -34,8 +38,7 @@ const SellerLoginForm = () => {
     email: Yup.string()
       .email("Email must be a valid email")
       .required("Email cannot be blank."),
-    password: Yup.string().required("Password is required"),
-    // .min(8, "Password must have at least 8 characters").matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]*$/, "Password must have at least one uppercase letter, one lowercase letter, and one digit")
+    password: Yup.string().required("Password cannot be blank"),
   });
 
   return (
@@ -80,11 +83,11 @@ const SellerLoginForm = () => {
                 {errors.password && touched.password ? (
                   <div className="error-meessage">{errors.password}</div>
                 ) : null}
+                {apiResponse && <p className="backend-response">{apiResponse.message}</p>}
 
                 <button className="submit-buton" type="submit">
                   Login
                 </button>
-                {apiResponse && <p>{apiResponse.message}</p>}
               </div>
             </Form>
           )}

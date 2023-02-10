@@ -9,7 +9,6 @@ const BuyerSignUpForm = () => {
   const [apiResponse, setApiResponse] = useState(null);
 
   const handleSubmit = async (values, actions) => {
-    console.log(">>>>>>>>>>>>>>>>>>>>", values);
 
     try {
       const response = await fetch("http://localhost:3001/api/buyers/signup", {
@@ -20,8 +19,12 @@ const BuyerSignUpForm = () => {
         body: JSON.stringify(values),
       });
       const data = await response.json();
-      console.log(".>>>><<<>>>>", data);
+      if(data==="Account created successfuly"){
+        window.location.replace("http://localhost:3000/buyer_login");
+
+      }
       setApiResponse(data);
+      console.log("apuuuu",apiResponse)
     } catch (error) {
       console.error(error);
     } finally {
@@ -39,8 +42,8 @@ const BuyerSignUpForm = () => {
       .min(3, "Name must be at least 3 characters"),
     phone: Yup.string()
       .matches(/^[0-9]+$/, "Phone number is not valid.")
-      .min(11, "03407420285")
-      .max(11, "03407420285")
+      .min(11, "03XXXXXXXXX")
+      .max(11, "03XXXXXXXXX")
 
       .required("Phone cannot be blank."),
     password: Yup.string()

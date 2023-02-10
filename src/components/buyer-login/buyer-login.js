@@ -40,7 +40,7 @@ const BuyerLoginForm = () => {
     email: Yup.string()
       .email("Email must be a valid email")
       .required("Email cannot be blank."),
-    password: Yup.string().required("Password is required"),
+    password: Yup.string().required("Password cannot be blank."),
   });
 
   return (
@@ -96,7 +96,6 @@ const BuyerLoginForm = () => {
                 >
                   Login
                 </button>
-                {/* {apiResponse && <p>{apiResponse.message}</p>} */}
               </div>
             </Form>
           )}

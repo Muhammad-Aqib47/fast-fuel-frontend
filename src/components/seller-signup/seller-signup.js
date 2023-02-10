@@ -9,7 +9,6 @@ const SellerSignUpForm = () => {
   const [apiResponse, setApiResponse] = useState(null);
 
   const handleSubmit = async (values, actions) => {
-    console.log(">>>>>>>>>>>>>>>>>>>>", values);
 
     try {
       const response = await fetch("http://localhost:3001/api/sellers/signup", {
@@ -20,8 +19,13 @@ const SellerSignUpForm = () => {
         body: JSON.stringify(values),
       });
       const data = await response.json();
-      console.log(".>>>><<<>>>>", data);
+      if(data==="Account created successfuly"){
+        window.location.replace("http://localhost:3000/seller_login");
+
+      }
       setApiResponse(data);
+      console.log("apuuuu",apiResponse)
+      
     } catch (error) {
       console.error(error);
     } finally {
@@ -39,23 +43,18 @@ const SellerSignUpForm = () => {
       .min(3, "Name must be at least 3 characters"),
     phone: Yup.string()
       .matches(/^[0-9]+$/, "Phone number is not valid.")
-      .min(11, "03407420285")
-      .max(11, "03407420285")
+      .min(11, "03XXXXXXXXX")
+      .max(11, "03XXXXXXXXX")
 
       .required("Phone cannot be blank."),
     password: Yup.string()
       .required("Password is required")
       .min(8, "Password must have at least 8 characters")
       .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]*$/,
-        "Password must have at least one uppercase letter, one lowercase letter, and one digit"
-      ),
+        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+        "Password must contains one uppercase letter, one lowercase letter, one digit, and one special character."),
   });
 
-  // function redirect(){
-  //     window.location.href="/sellerlogin";
-  //     alert("data submitted successfully")
-  // }
 
   return (
     <div className="main">
@@ -72,14 +71,6 @@ const SellerSignUpForm = () => {
           initialValues={{ email: "", name: "", phone: "", password: "" }}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
-        // onSubmit={(values, actions) => {
-        //   // handle form submission
-        //   console.log(values);
-        //   actions = "/sellerlogin"
-        //   // redirect();
-
-        //   //you can make api call here to save the form data.
-        // }}
         >
           {({ errors, touched, isSubmitting }) => (
             <Form>
@@ -132,6 +123,7 @@ const SellerSignUpForm = () => {
                 {errors.password && touched.password ? (
                   <div className="error-meessage">{errors.password}</div>
                 ) : null}
+                {apiResponse && <p className="backend-response">{apiResponse}</p>}
 
                 <button
                   className="submit-buton"
@@ -140,7 +132,6 @@ const SellerSignUpForm = () => {
                 >
                   Sign Up
                 </button>
-                {apiResponse && <p>{apiResponse}</p>}
               </div>
             </Form>
           )}

@@ -34,6 +34,8 @@
 .image-container {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
+
 }
 
 .profile-image {
@@ -78,6 +80,8 @@
 .text-before-link{
   text-align: center;
   margin-bottom: 24px;
+  margin-top: 8px;
+
   color: gray;
 }
 .link-to-redirect {
@@ -92,5 +96,5 @@
   text-align: center;
   color: red;
   margin-bottom: 0px;
-  margin-top: 16px;
+  margin-top: 8px;
 }
