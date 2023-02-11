@@ -11,6 +11,7 @@ import Error from './pages/404';
 import Profile from './components/buyer/profile';
 import BuyerDashBoard from './components/buyer/fullForm/index';
 import SellerDashBoard from './components/seller/seller';
+import AddFuel from './components/seller/add-fuel';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Route path='/order_status' element={<OrderStatus />} />
       <Route path='/buyer_profile' element={<Profile />} />
       <Route path='/seller_buyer_orders' element={<SellerDashBoard />} />
+      <Route path='/seller_add_fuel' element={<AddFuel />} />
       <Route path='*' element={<Error />} />
     </Routes>
   );

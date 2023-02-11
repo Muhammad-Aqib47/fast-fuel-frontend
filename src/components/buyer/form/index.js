@@ -77,11 +77,10 @@ function Form() {
 
                         });
                         const data = await response.json()
-
-                        console.log('data is here', data)
                     } catch (error) {
                         console.log(error);
                     }
+
                     //-----after submit form all fields to be empty------//
                 }).then(() => {
                     setFormData({

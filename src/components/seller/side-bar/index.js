@@ -46,6 +46,7 @@ function SellerSideBar() {
             </div>
 
             <ul>
+                <Link to="/seller_add_fuel" className="link"><li className='lists'><i className="fa-solid fa-plus" style={{ marginRight: "7px" }}></i>Add Fuel </li> </Link>
                 <Link to="/seller_buyer_orders" className="link"><li className='lists'><i className="fa-solid fa-file-lines" style={{ marginRight: "7px" }}></i>Orders</li> </Link>
                 <Link to="/" className="link"><li className='lists' onClick={handleLogOut}><i className="fa-solid fa-circle-arrow-left" style={{ marginRight: "7px" }}></i>LogOut</li> </Link>
             </ul>

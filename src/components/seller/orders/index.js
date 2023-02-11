@@ -16,7 +16,7 @@ function Orders() {
         }
     }
 
-    //update order data from buyers
+    //update order data for confiirmation
     const updateOrderData = async (id) => {
         try {
             const response = await fetch(`http://localhost:3001/api/sellers/${id}`, {
@@ -31,8 +31,6 @@ function Orders() {
 
             }).then(() => window.location.reload())
             const data = await response.json()
-            console.log('data is here', data)
-
         } catch (error) {
 
         }
@@ -48,7 +46,7 @@ function Orders() {
         <div className="main_content">
             <div className="container">
                 <div className="title">
-                    <h2 className="header"> Order Status </h2>
+                    <h2 className="header"> Orders </h2>
                 </div>
 
                 <div className="table_div">

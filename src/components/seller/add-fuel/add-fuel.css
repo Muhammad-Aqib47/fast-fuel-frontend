@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+
+
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+
+    }
+}
+
+.add-fuel {
+    margin-top: 45px;
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    padding-top: 16px;
+    background-color: #f3f5f9;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 150px;
+
+
+}
+
+.title {
+    background: linear-gradient(to bottom right, #4b4276 0%, #70EAFF 100%);
+    padding: 10px;
+    color: #f6f6f6;
+    position: fixed;
+    width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.header {
+    margin-left: 36%;
+}
+
+.required {
+    color: red;
+}
+
+.order-form-label {
+    display: block;
+    margin-left: 20px;
+    padding-top: 17px;
+
+}
+
+.order-form-label>span {
+    float: left;
+    width: 20%;
+    margin-top: 12px;
+    padding-right: 10px;
+
+
+}
+
+
+
+.select {
+    width: 70%;
+    border: 1px solid #dadada;
+    color: #888;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.select-price {
+    -webkit-appearance: none;
+    width: 70%;
+    border: 1px solid #dadada;
+    color: #888;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+
+
+}
+
+input[type="text"] {
+    width: 70%;
+    height: 30px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dadada;
+    color: #888;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+
+}
+
+input[type="number"] {
+    width: 70%;
+    height: 30px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dadada;
+    color: #888;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+input[type="tel"] {
+    width: 70%;
+    height: 30px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dadada;
+    color: #888;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+
+.liter {
+    font-size: 90%;
+    color: #2642bd;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.add-button {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 160px;
+    padding: 3px;
+    background-color: #00B0FF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
