@@ -105,7 +105,7 @@ function AddFuel() {
                     </label>
 
 
-                    <button type='submit' className='add-button'>Add </button>
+                    <button type='submit' className='add-button'>Add</button>
                 </form>
 
             </div>

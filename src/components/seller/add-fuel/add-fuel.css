@@ -12,7 +12,7 @@
 .add-fuel {
     margin-top: 45px;
     position: fixed;
-    width: 50%;
+    width: 65%;
     height: 50%;
     padding-top: 16px;
     background-color: #f3f5f9;
@@ -58,8 +58,8 @@
 
 
 
-.select {
-    width: 70%;
+.select-fuel {
+    width: 50%;
     border: 1px solid #dadada;
     color: #888;
     padding: 5px 10px;
@@ -82,8 +82,8 @@
 
 }
 
-input[type="text"] {
-    width: 70%;
+.select-fuel-price {
+    width: 50%;
     height: 30px;
     padding: 5px 10px;
     margin-bottom: 10px;
@@ -95,29 +95,6 @@ input[type="text"] {
 
 }
 
-input[type="number"] {
-    width: 70%;
-    height: 30px;
-    padding: 5px 10px;
-    margin-bottom: 10px;
-    border: 1px solid #dadada;
-    color: #888;
-    font-size: 15px;
-    font-family: 'Josefin Sans', sans-serif;
-    box-sizing: border-box;
-}
-
-input[type="tel"] {
-    width: 70%;
-    height: 30px;
-    padding: 5px 10px;
-    margin-bottom: 10px;
-    border: 1px solid #dadada;
-    color: #888;
-    font-size: 15px;
-    font-family: 'Josefin Sans', sans-serif;
-
-}
 
 
 .liter {
@@ -130,7 +107,7 @@ input[type="tel"] {
 .add-button {
     font-size: 20px;
     margin-top: 5px;
-    margin-left: 160px;
+    margin-left: 203px;
     padding: 3px;
     background-color: #00B0FF;
     color: white;
