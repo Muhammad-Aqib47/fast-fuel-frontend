@@ -17,6 +17,7 @@ function Form() {
         selectFueltype: "",
         fuelPrice: "",
         fuelQuantity: "",
+        totalPrice: "",
         fuelDeliveryAddress: "",
         phoneNumber: "",
         selectPaymentMethod: "",
@@ -37,10 +38,12 @@ function Form() {
         selectFueltype: formData.selectFueltype,
         fuelPrice: formData.fuelPrice,
         fuelQuantity: formData.fuelQuantity,
+        totalPrice: formData.totalPrice,
         fuelDeliveryAddress: formData.fuelDeliveryAddress,
         phoneNumber: formData.phoneNumber,
         selectPaymentMethod: formData.selectPaymentMethod,
     }
+    console.log('allInputValues here', allInputValues)
 
 
     //---------for submit order------------------//
@@ -77,11 +80,12 @@ function Form() {
 
                         });
                         const data = await response.json()
+                        console.log('form data here', data)
                     } catch (error) {
                         console.log(error);
                     }
 
-                    //-----after submit form all fields to be empty------//
+                    //-----after submit form all fields set to empty------//
                 }).then(() => {
                     setFormData({
                         name: "",
@@ -90,6 +94,7 @@ function Form() {
                         selectFueltype: "",
                         fuelPrice: "",
                         fuelQuantity: "",
+                        totalPrice: '',
                         fuelDeliveryAddress: "",
                         phoneNumber: "",
                         selectPaymentMethod: "",
@@ -115,7 +120,7 @@ function Form() {
                 const response = await fetch('http://localhost:3001/api/buyers/getCities')
                 const data = await response.json()
 
-                //------convert data of array in to single data array
+                //------convert data of array in to single  array
                 let cityNames = data.map(city => city.seller_city);
 
                 /// remove dublicate cities in array of cities
@@ -174,7 +179,6 @@ function Form() {
                 )
                 const uniquePrice = data.filter(isDuplicate);
                 setFuelPrice(uniquePrice);
-                console.log("data is here", uniquePrice);
             } catch (error) {
                 console.log(error)
             }
@@ -244,14 +248,23 @@ function Form() {
 
 
                     <label className='order-form-label'>
+                        <span> Total Price </span>
+                        <select className='select-price' onChange={inputHandler} value={formData.totalPrice} name="totalPrice" >
+                            <option>Select Total price</option>
+                            <option>{formData.fuelPrice * formData.fuelQuantity}</option>
+                        </select>
+                    </label>
+
+
+                    <label className='order-form-label'>
                         <span> Fuel Delivery Address <span className="required">*</span></span>
-                        <input type="text" onChange={inputHandler} value={formData.fuelDeliveryAddress} name="fuelDeliveryAddress" required />
+                        <input type="text" onChange={inputHandler} value={formData.fuelDeliveryAddress} name="fuelDeliveryAddress" placeholder='Enter Delivery Address' required />
                     </label>
 
 
                     <label className='order-form-label'>
                         <span> Phone Number <span className="required">*</span></span>
-                        <input type="number" onChange={inputHandler} value={formData.phoneNumber} name="phoneNumber" required />
+                        <input type="number" onChange={inputHandler} value={formData.phoneNumber} name="phoneNumber" placeholder='Enter Phone Number Here' required />
                     </label>
 
 

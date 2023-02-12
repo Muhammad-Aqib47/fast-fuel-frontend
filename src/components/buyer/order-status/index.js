@@ -90,8 +90,9 @@ function OrderStatus(id) {
                                     <th>City</th>
                                     <th>Fuel Station</th>
                                     <th>Fuel Type</th>
-                                    <th>Fuel Price/per Liter</th>
                                     <th>Quantity/liter</th>
+                                    <th>Fuel Price/per Liter</th>
+                                    <th>Total price Rs.</th>
                                     <th>Delivery address</th>
                                     <th>Phone Number</th>
                                     <th>Payment Mode</th>
@@ -102,13 +103,14 @@ function OrderStatus(id) {
                                 {ordersData.map((order, index) => {
 
                                     return <tr key={index}>
-                                        <td style={{ color: 'blue' }}>{order.order_status}</td>
+                                        <td style={{ color: 'blue', fontWeight: 'bold' }}>{order.order_status}</td>
                                         <td>{order.b_name}</td>
                                         <td>{order.city}</td>
                                         <td>{order.fuel_station}</td>
                                         <td>{order.fuel_type}</td>
-                                        <td>{order.fuel_price}</td>
                                         <td>{order.fuel_quantity}</td>
+                                        <td>{order.fuel_price}</td>
+                                        <td>{order.total_price}</td>
                                         <td>{order.fuel_delivery_address}</td>
                                         <td>{order.b_phone_number}</td>
                                         <td>{order.payment_mode}</td>

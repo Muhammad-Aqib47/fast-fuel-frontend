@@ -26,7 +26,7 @@ function Orders() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    order_status: "Confirm"
+                    order_status: prompt('')
                 })
 
             }).then(() => window.location.reload())
@@ -54,12 +54,13 @@ function Orders() {
                         <thead className={ordersData.length > 0 ? '' : 'hidden'}>
                             <tr>
                                 <th>Order Status</th>
-                                <th>Buyer Name</th>
+                                <th>Your Name</th>
                                 <th>City</th>
                                 <th>Fuel Station</th>
                                 <th>Fuel Type</th>
-                                <th>Fuel Price/per Liter</th>
                                 <th>Quantity/liter</th>
+                                <th>Fuel Price/per Liter</th>
+                                <th>Total price Rs.</th>
                                 <th>Delivery address</th>
                                 <th>Phone Number</th>
                                 <th>Payment Mode</th>
@@ -70,17 +71,18 @@ function Orders() {
                             {ordersData.map((order, index) => {
 
                                 return <tr key={index}>
-                                    <td style={{ color: 'blue' }}>{order.order_status}</td>
+                                    <td style={{ color: 'blue', fontWeight: 'bold' }}>{order.order_status}</td>
                                     <td>{order.b_name}</td>
                                     <td>{order.city}</td>
                                     <td>{order.fuel_station}</td>
                                     <td>{order.fuel_type}</td>
-                                    <td>{order.fuel_price}</td>
                                     <td>{order.fuel_quantity}</td>
+                                    <td>{order.fuel_price}</td>
+                                    <td>{order.total_price}</td>
                                     <td>{order.fuel_delivery_address}</td>
                                     <td>{order.b_phone_number}</td>
                                     <td>{order.payment_mode}</td>
-                                    <td><button className="button-58" onClick={() => updateOrderData(order.order_id)}><span className="button-57-text"><i className="fa-solid fa-circle-check"></i></span><span>Confirm</span></button></td>
+                                    <td><button className="button-58" onClick={() => updateOrderData(order.order_id)}><span className="button-57-text"><i className="fa-solid fa-circle-check"></i></span><span>Status</span></button></td>
                                 </tr>
                             })}
                         </tbody>
