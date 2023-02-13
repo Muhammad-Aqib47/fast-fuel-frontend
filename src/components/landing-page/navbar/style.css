@@ -1,0 +1,85 @@
+.navbar {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  background-color: black;
+  color: #fff;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+.nav-links {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-right-button {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-links .anchor {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.nav-links .anchor:hover {
+  background-color: #444;
+}
+
+.nav-right .button-1 {
+  background-color: #00b0ff;
+  border-radius: 2px;
+  border: none;
+  width: 80px;
+  height: 30px;
+  margin: 0px 5px 0px 5px;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.nav-right .button-1:hover {
+  background-color: #ff9d00;
+  color: white;
+  font-size: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+
+
+}
+
+.nav-right .button-1 .span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.nav-right .button-1 .span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  width: 27px;
+}
+
+.nav-right .button-1:hover .span {
+  padding-right: 25px;
+}
+
+.nav-right .button-1:hover .span:after {
+  opacity: 1;
+  right: 0;
+}

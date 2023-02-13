@@ -1,13 +1,13 @@
 import SideBar from "../sidebar";
 import '../sidebar/style.css'
-import '../form/styles.css'
+import '../form/form-styles.css'
 import './styles.css'
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 
 
-function OrderStatus() {
+function OrderStatus(id) {
     const [ordersData, setOrdersData] = useState([])
 
 
@@ -17,6 +17,7 @@ function OrderStatus() {
             const response = await fetch('http://localhost:3001/api/orders/getBuyerOrderStatus')
             const data = await response.json()
             setOrdersData(data)
+            console.log("order status", data)
         } catch (error) {
             console.log(error);
         }
@@ -30,27 +31,19 @@ function OrderStatus() {
 
 
     //delete row from orders table where id == id
-    const cancelOrder = async (id) => {
-        try {
-            const response = await fetch(`http://localhost:3001/api/orders/${id}`, {
-                method: 'DELETE'
-            });
-            const data = await response.json()
-            console.log("data deleted", data)
-
-        } catch (error) {
-            console.log(error)
-        }
+    const cancelOrder = (id) => {
 
         Swal.fire({
             title: 'Are you sure?',
             text: "To cancel your order !",
-            type: 'warning',
+            icon: 'warning',
             buttonsStyling: false,
             showCancelButton: true,
             cancelButtonText: 'No',
             confirmButtonText: 'Yes',
             allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false
 
         }).then((result) => {
             if (result.isConfirmed) {
@@ -60,35 +53,46 @@ function OrderStatus() {
                     icon: 'success',
                     buttonsStyling: false,
                     confirmButtonText: 'OK'
-                })
-                    .then(() => {
-                        window.location.reload();
-                    });
+                }).then(async () => {
+                    try {
+                        const response = await fetch(`http://localhost:3001/api/orders/${id}`, {
+                            method: 'DELETE'
+                        });
+                        const data = await response.json()
+                        console.log("data deleted", data)
+
+                    } catch (error) {
+                        console.log(error)
+                    }
+                }).then(() => {
+                    window.location.reload();
+                });
             }
         })
     }
 
     return (
 
-        <div className="wrapper">
+        <div>
             <SideBar />
             <div className="main_content">
                 <div className="container">
                     <div className="title">
-                        <h2> Order Status </h2>
+                        <h2 className="header"> Order Status </h2>
                     </div>
 
                     <div className="table_div">
                         <table className="table">
                             <thead className={ordersData.length > 0 ? '' : 'hidden'}>
                                 <tr>
-                                    <th>Order_id</th>
+                                    <th>Order Status</th>
                                     <th>Your Name</th>
                                     <th>City</th>
                                     <th>Fuel Station</th>
                                     <th>Fuel Type</th>
+                                    <th>Quantity/liter</th>
                                     <th>Fuel Price/per Liter</th>
-                                    <th>Quantity</th>
+                                    <th>Total price Rs.</th>
                                     <th>Delivery address</th>
                                     <th>Phone Number</th>
                                     <th>Payment Mode</th>
@@ -99,18 +103,18 @@ function OrderStatus() {
                                 {ordersData.map((order, index) => {
 
                                     return <tr key={index}>
-                                        {/* <td>{Math.floor(Math.random() * 90000) + 10000}</td> */}
-                                        <td>{order.order_id}</td>
+                                        <td style={{ color: 'blue', fontWeight: 'bold' }}>{order.order_status}</td>
                                         <td>{order.b_name}</td>
                                         <td>{order.city}</td>
                                         <td>{order.fuel_station}</td>
                                         <td>{order.fuel_type}</td>
-                                        <td>{order.fuel_price}</td>
                                         <td>{order.fuel_quantity}</td>
+                                        <td>{order.fuel_price}</td>
+                                        <td>{order.total_price}</td>
                                         <td>{order.fuel_delivery_address}</td>
                                         <td>{order.b_phone_number}</td>
                                         <td>{order.payment_mode}</td>
-                                        <td><button className="delete-row" onClick={() => cancelOrder(order.order_id)}>Cancel Order</button></td>
+                                        <td><button onClick={() => cancelOrder(order.order_id)} className="button-57" ><span className="button-57-text"><i className="fa-solid fa-trash"></i></span><span>Cancel Order</span></button></td>
                                     </tr>
                                 })}
                             </tbody>

@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
+
+
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+
+    }
+}
+
+.order-form {
+    margin-top: 45px;
+    position: fixed;
+    width: 85%;
+    height: 100%;
+    padding-top: 16px;
+    background-color: #f3f5f9;
+    font-family: 'Josefin Sans', sans-serif;
+
+
+}
+
+.title {
+    background: linear-gradient(to bottom right, #4b4276 0%, #70EAFF 100%);
+    padding: 10px;
+    color: #f6f6f6;
+    position: fixed;
+    width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.header {
+    margin-left: 36%;
+}
+
+.name-span {
+    color: black;
+    margin-left: 50px;
+}
+
+.order-form-label {
+    display: block;
+    margin-left: 20px;
+    padding-top: 17px;
+
+}
+
+.order-form-label>span {
+    float: left;
+    width: 20%;
+    margin-top: 12px;
+    padding-right: 10px;
+
+
+}
+
+input[type="email"] {
+    width: 70%;
+    height: 30px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dadada;
+    color: #888;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.select {
+    width: 70%;
+    border: 1px solid #dadada;
+    color: #888;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.select-price {
+    -webkit-appearance: none;
+    width: 70%;
+    border: 1px solid #dadada;
+    color: #888;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+
+
+}
+
+input[type="text"] {
+    width: 70%;
+    height: 30px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dadada;
+    color: #888;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+
+}
+
+input[type="number"] {
+    width: 70%;
+    height: 30px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dadada;
+    color: #888;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+input[type="tel"] {
+    width: 70%;
+    height: 30px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dadada;
+    color: #888;
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+
+.liter {
+    font-size: 90%;
+    color: #2642bd;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.swal2-confirm {
+    margin: 10px;
+    padding-right: 32px;
+    padding-left: 33px;
+    border-radius: 30px;
+    border: none;
+    background: #52ad9c;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.swal2-confirm:hover {
+    cursor: pointer;
+    background: #428a7d;
+}
+
+.swal2-cancel {
+    margin: 10px;
+    padding-right: 32px;
+    padding-left: 33px;
+    border-radius: 30px;
+    border: none;
+    background: rgb(66, 66, 248);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.swal2-cancel:hover {
+    cursor: pointer;
+    background: white;
+    color: white;
+    background: rgb(98, 98, 223);
+
+}
+
+
+/* button CSS */
+.button-48 {
+    appearance: none;
+    background-color: #00B0FF;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 1em;
+    margin: 0;
+    opacity: 1;
+    outline: 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-rendering: geometricprecision;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 10px;
+    margin-left: 50%;
+    border-radius: 30px;
+    padding: 15px;
+    border: none;
+
+}
+
+.button-48:before {
+    backface-visibility: hidden;
+    background-color: #ff9D00;
+    border-radius: 30px;
+    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateZ(0);
+    transition: clip-path .8s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+    width: 100%;
+}
+
+.button-48:hover:before {
+    animation: opacityFallbackIn 0s step-start forwards;
+    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-48:after {
+    background-color: #FFFFFF;
+}
+
+.button-48 .button48-text {
+    z-index: 1;
+    position: relative;
+}
